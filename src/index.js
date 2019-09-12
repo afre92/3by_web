@@ -7,15 +7,26 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Greetings from './components/Greetings';
 import SignupPage from './components/signup/SignupPage';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux';
+
+
+const store = createStore(
+  (state = {}) => state,
+  applyMiddleware(thunk)
+)
 
 render((
-  <Router>
-    <div>
-      <Route path="/" component={App} />
-      <Route exact path="/" component={Greetings} />
-      <Route path="/signup" component={SignupPage} />
-    </div>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route path="/" component={App} />
+        <Route exact path="/" component={Greetings} />
+        <Route path="/signup" component={SignupPage} />
+      </div>
+    </Router>
+  </Provider>
 ), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
