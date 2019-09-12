@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classnames from 'classnames'
 
 
 export default class SignupForm extends Component {
@@ -8,7 +9,9 @@ export default class SignupForm extends Component {
       username: '',
       email: '',
       password: '',
-      password_confirmation: ''
+      password_confirmation: '',
+      errors: {},
+      isLoading: false
     }
 
     this.onChange = this.onChange.bind(this);
@@ -22,15 +25,20 @@ export default class SignupForm extends Component {
   }
 
   onSubmit(e){
+    this.setState({ errors: {}, isLoading: true});
     e.preventDefault();
-    this.props.userSignupRequest(this.state);
+    this.props.userSignupRequest(this.state).then(
+      () => {},
+      ({ data }) => this.setState({ erros: data, isLoading: false})
+    )
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
         <h1>Join our community</h1>
-        <div className="form-group">
+        <div className={classnames('form-group', { 'has-error': errors.username })}>
           <label className="control-label">username</label>
           <input
             onChange={this.onChange} 
@@ -38,6 +46,7 @@ export default class SignupForm extends Component {
             name="username"
             className="form-control"
           />
+          {errors.username && <span className='help-block'>{errors.username}</span>}
         </div>
 
         <div className="form-group">
@@ -70,7 +79,7 @@ export default class SignupForm extends Component {
           />
         </div>
         <div className="form-group">
-          <button className="btn btn-primary btn-lg">
+          <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
             sign up
           </button>
         </div>
