@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import PropTypes from 'prop-types'
-// import { browserHistory } from 'react-router'
 
 
 export default class SignupForm extends Component {
@@ -31,6 +29,11 @@ export default class SignupForm extends Component {
     e.preventDefault();
     this.props.userSignupRequest(this.state).then(
       () => {
+        this.props.addFlashMessage({
+          types: 'success',
+          text: 'you signed up successfully. Welcome!'
+
+        });
         this.props.history.push('/');
       },
       ({ data }) => this.setState({ erros: data, isLoading: false})
@@ -92,12 +95,3 @@ export default class SignupForm extends Component {
     )
   }
 }
-
-// SignupForm.contexType = {
-//   router: PropTypes.object.isRequired
-// }
-
-// bc this is a function passed to the component
-// SignupForm.propTypes = {
-//   userSignupRequest: React.PropTypes.func.isRequired
-// }
