@@ -30,7 +30,7 @@ export default class SignupForm extends Component {
     this.props.userSignupRequest(this.state).then(
       () => {
         this.props.addFlashMessage({
-          types: 'success',
+          type: 'success',
           text: 'you signed up successfully. Welcome!'
 
         });
