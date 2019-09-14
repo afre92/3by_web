@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classnames from 'classnames'
+import TextFieldGroup from '../common/TextFieldGroup';
 
 
 export default class SignupForm extends Component {
@@ -45,46 +45,41 @@ export default class SignupForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <h1>Join our community</h1>
-        <div className={classnames('form-group', { 'has-error': errors.username })}>
-          <label className="control-label">username</label>
-          <input
-            onChange={this.onChange} 
-            type="text"
-            name="username"
-            className="form-control"
-          />
-          {errors.username && <span className='help-block'>{errors.username}</span>}
-        </div>
 
-        <div className="form-group">
-          <label className="control-label">email</label>
-          <input
-            onChange={this.onChange} 
-            type="text"
-            name="email"
-            className="form-control"
-          />
-        </div>
+        <TextFieldGroup
+          error={errors.username}
+          label="username"
+          onChange={this.onChange}
+          value={this.state.username}
+          field="username"
+        />
 
-        <div className="form-group">
-          <label className="control-label">password</label>
-          <input
-            onChange={this.onChange} 
-            type="password"
-            name="password"
-            className="form-control"
-          />
-        </div>
+        <TextFieldGroup
+          error={errors.email}
+          label="email"
+          onChange={this.onChange}
+          value={this.state.email}
+          field="email"
+        />
 
-        <div className="form-group">
-          <label className="control-label">password confirmation</label>
-          <input
-            onChange={this.onChange} 
-            type="password"
-            name="password_confirmation"
-            className="form-control"
-          />
-        </div>
+        <TextFieldGroup
+          error={errors.password}
+          label="password"
+          onChange={this.onChange}
+          value={this.state.password}
+          field="password"
+          type="password"
+        />
+
+        <TextFieldGroup
+          error={errors.password_confirmation}
+          label="password_confirmation"
+          onChange={this.onChange}
+          value={this.state.password_confirmation}
+          field="password_confirmation"
+          type="password"
+        />
+
         <div className="form-group">
           <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
             sign up
