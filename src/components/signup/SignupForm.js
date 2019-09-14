@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
+import PropTypes from 'prop-types';
 
 
 export default class SignupForm extends Component {
@@ -11,17 +12,39 @@ export default class SignupForm extends Component {
       password: '',
       password_confirmation: '',
       errors: {},
-      isLoading: false
+      isLoading: false,
+      invalid: false
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.checkUserExists = this.checkUserExists.bind(this);
   }
 
   onChange(e){
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  checkUserExists(e){
+    const field = e.target.name;
+    const val = e.target.value;
+    if (val.length >= 3) {
+      this.props.userExists(val).then(res => {
+        let errors = this.state.errors;
+        let invalid;
+        if (res.data) {
+          errors[field] = 'There is user with such ' + field;
+          invalid = true;
+        } else {
+          errors[field] = '';
+          invalid = false
+        }
+        this.setState({ errors, invalid })
+      })
+    }
+
   }
 
   onSubmit(e){
@@ -49,6 +72,7 @@ export default class SignupForm extends Component {
         <TextFieldGroup
           error={errors.username}
           label="username"
+          checkUserExists={this.checkUserExists}
           onChange={this.onChange}
           value={this.state.username}
           field="username"
@@ -57,6 +81,7 @@ export default class SignupForm extends Component {
         <TextFieldGroup
           error={errors.email}
           label="email"
+          checkUserExists={this.checkUserExists}
           onChange={this.onChange}
           value={this.state.email}
           field="email"
@@ -81,7 +106,7 @@ export default class SignupForm extends Component {
         />
 
         <div className="form-group">
-          <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
+          <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-primary btn-lg">
             sign up
           </button>
         </div>
@@ -89,4 +114,10 @@ export default class SignupForm extends Component {
       </form>
     )
   }
+}
+
+SignupForm.propTypes = {
+  userSignupRequest: PropTypes.func.isRequired,
+  addFlashMessage: PropTypes.func.isRequired,
+  userExists: PropTypes.func.isRequired
 }

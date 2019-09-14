@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.form-group.is-invalid input {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+
+.help-block {
+  color: #dc3545 !important;
+}
