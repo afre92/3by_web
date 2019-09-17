@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import TextFieldGroup from '../common/TextFieldGroup';
+import { connect } from 'react-redux';
+import { login } from '../../actions/login';
+import PropTypes from 'prop-types';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -24,7 +27,12 @@ export default class LoginForm extends Component {
   }
 
   onSubmit(e){
-
+    e.preventDefault();
+    this.setState({ errors: {}, isLoading: true});
+    this.props.login(this.state).then(
+      (res) => this.props.history.push('/'),
+      (err) => this.setState({ errors: {}, isLoading: false})
+    )
   }
   render() {
 
@@ -59,3 +67,10 @@ export default class LoginForm extends Component {
     )
   }
 }
+
+LoginForm.propTypes = {
+  login: PropTypes.func.isRequired
+}
+
+
+export default connect(null, { login })(LoginForm)
