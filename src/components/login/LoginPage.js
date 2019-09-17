@@ -6,7 +6,7 @@ export default class LoginPage extends Component {
     return (
       <div className="">
         <div className="col-md-4 col-md-offset-4">
-          <LoginForm />
+          <LoginForm history={this.props.history} />
         </div>
       </div>
     )
