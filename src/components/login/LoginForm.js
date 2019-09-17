@@ -31,7 +31,7 @@ class LoginForm extends Component {
     this.setState({ errors: {}, isLoading: true});
     this.props.login(this.state).then(
       (res) => this.props.history.push('/'),
-      (err) => this.setState({ errors: {}, isLoading: false})
+      (err) => this.setState({ errors: err['response']['data'], isLoading: false})
     )
   }
   render() {
@@ -40,6 +40,8 @@ class LoginForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <h1> Login </h1>
+
+        { errors.error && <div className="alert alert-danger">{errors.error}</div> }
 
         <TextFieldGroup
           field="identifier"
