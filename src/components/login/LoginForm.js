@@ -39,7 +39,24 @@ class LoginForm extends Component {
     const { email, password, errors, isLoading } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
-        <h1> Login </h1>
+          <div class="text-muted text-center ml-auto mr-auto">
+            <h3 class="mb-0">Sign in with</h3>
+          </div>
+
+          <div className="auth-icons">
+            <div class="btn-wrapper text-center">
+              <a href="#" class="btn btn-neutral btn-icon">
+                <img src="assets/img/github.svg" />
+              </a>
+              <a href="#" class="btn btn-neutral btn-icon">
+                <img src="assets/img/google.svg" />
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center text-muted mb-4 mt-3">
+            <small>Or sign in with credentials</small>
+          </div>
 
         { errors.error && <div className="alert alert-danger">{errors.error}</div> }
 

@@ -26,7 +26,7 @@ class NavigationBar extends Component {
       </ul>
     )
     return (
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-expand-lg navbar-transparent">
         <div className="container-fluid">
           <div className="navbar-header">
             <Link to="/" className="navbar-brand"> 3by </Link>
