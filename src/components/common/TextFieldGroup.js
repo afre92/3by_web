@@ -4,8 +4,13 @@ import classnames from 'classnames'
 
 export default function TextFieldGroup({ field, value, error, label, type, onChange, checkUserExists}) {
     return (
-        <div className={classnames('class_Was_form-group', { 'is-invalid': error })}>
+        <div className={classnames('input-group input-group-alternative', { 'is-invalid': error })}>
           {/* <label className="control-label">{label}</label> */}
+          <div className="input-group-prepend">
+            <div className="input-group-text">
+              <i className="tim-icons icon-email-85"></i>
+            </div>
+          </div>
           <input
             onChange={onChange}
             onBlur={checkUserExists}
@@ -18,6 +23,7 @@ export default function TextFieldGroup({ field, value, error, label, type, onCha
         </div> 
     )
 }
+
 
 TextFieldGroup.propTypes = {
     field: PropTypes.string.isRequired,

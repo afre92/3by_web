@@ -64,12 +64,7 @@ class LoginForm extends Component {
 
 
                   
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="tim-icons icon-email-85"></i>
-                      </span>
-                    </div>
+             
                     <TextFieldGroup
                         field="email"
                         label="Email"
@@ -77,7 +72,7 @@ class LoginForm extends Component {
                         error={errors.email}
                         onChange={this.onChange}
                       />
-                  </div>
+                  
 
         <TextFieldGroup
           field="password"
