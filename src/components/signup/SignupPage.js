@@ -9,7 +9,7 @@ class SignupPage extends Component {
   render() {
     const { userSignupRequest, addFlashMessage, userExists } = this.props;
     return (
-      <div className="index-page" >
+      <div >
         <div className="col-md-4 col-md-offset-4">
           <SignupForm userSignupRequest={userSignupRequest} history={this.props.history} addFlashMessage={addFlashMessage} userExists={userExists} />
         </div>

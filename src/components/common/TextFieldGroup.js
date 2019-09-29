@@ -4,8 +4,8 @@ import classnames from 'classnames'
 
 export default function TextFieldGroup({ field, value, error, label, type, onChange, checkUserExists}) {
     return (
-        <div className={classnames('form-group', { 'is-invalid': error })}>
-          <label className="control-label">{label}</label>
+        <div className={classnames('class_Was_form-group', { 'is-invalid': error })}>
+          {/* <label className="control-label">{label}</label> */}
           <input
             onChange={onChange}
             onBlur={checkUserExists}

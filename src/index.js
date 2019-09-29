@@ -33,7 +33,7 @@ if (localStorage.jwtToken) {
 render((
   <Provider store={store}>
     <Router>
-      <div>
+      <div className="index-page" >
         <Route path="/" component={App} />
         <Route exact path="/" component={Greetings} />
         <Route path="/signup" component={SignupPage} />

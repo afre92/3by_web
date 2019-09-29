@@ -60,13 +60,24 @@ class LoginForm extends Component {
 
         { errors.error && <div className="alert alert-danger">{errors.error}</div> }
 
-        <TextFieldGroup
-          field="email"
-          label="Email"
-          value={email}
-          error={errors.email}
-          onChange={this.onChange}
-        />
+
+
+
+                  
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-email-85"></i>
+                      </span>
+                    </div>
+                    <TextFieldGroup
+                        field="email"
+                        label="Email"
+                        value={email}
+                        error={errors.email}
+                        onChange={this.onChange}
+                      />
+                  </div>
 
         <TextFieldGroup
           field="password"
