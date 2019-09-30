@@ -72,6 +72,11 @@
   box-sizing: border-box;
 }
 
+.center-horizontally {
+  display: flex;
+  justify-content: center;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

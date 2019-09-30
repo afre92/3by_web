@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-export default function TextFieldGroup({ field, value, error, label, type, onChange, checkUserExists}) {
+export default function TextFieldGroup({ field, value, error, placeholder, type, onChange, checkUserExists, icon}) {
     return (
-        <div className={classnames('input-group input-group-alternative', { 'is-invalid': error })}>
-          {/* <label className="control-label">{label}</label> */}
+        <div className={classnames('input-group input-group-alternative', { 'form-control-danger': error })}>
           <div className="input-group-prepend">
             <div className="input-group-text">
-              <i className="tim-icons icon-email-85"></i>
+              <i className={`tim-icons ${icon}`}></i>
             </div>
           </div>
           <input
             onChange={onChange}
             onBlur={checkUserExists}
             type={type}
+            placeholder={placeholder}
             name={field}
             value={value}
             className="form-control"
@@ -28,7 +28,7 @@ export default function TextFieldGroup({ field, value, error, label, type, onCha
 TextFieldGroup.propTypes = {
     field: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
     error: PropTypes.string,
     type: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
@@ -36,5 +36,6 @@ TextFieldGroup.propTypes = {
 }
 
 TextFieldGroup.defaultProps = {
-    type: 'text'
+    type: 'text',
+    placeholder: ''
 }

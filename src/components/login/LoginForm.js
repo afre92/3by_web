@@ -39,54 +39,59 @@ class LoginForm extends Component {
     const { email, password, errors, isLoading } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
-          <div class="text-muted text-center ml-auto mr-auto">
-            <h3 class="mb-0">Sign in with</h3>
+        <div className="text-muted text-center ml-auto mr-auto">
+          <h3 className="mb-0">Sign in with</h3>
+        </div>
+        <br />
+        <div className="auth-icons">
+          <div className="btn-wrapper text-center">
+            <a href="#" className="btn btn-neutral btn-icon">
+              <img src="assets/img/github.svg" />
+            </a>
+            <a href="#" className="btn btn-neutral btn-icon">
+              <img src="assets/img/google.svg" />
+            </a>
           </div>
+        </div>
 
-          <div className="auth-icons">
-            <div class="btn-wrapper text-center">
-              <a href="#" class="btn btn-neutral btn-icon">
-                <img src="assets/img/github.svg" />
-              </a>
-              <a href="#" class="btn btn-neutral btn-icon">
-                <img src="assets/img/google.svg" />
-              </a>
-            </div>
-          </div>
-
-          <div class="text-center text-muted mb-4 mt-3">
-            <small>Or sign in with credentials</small>
-          </div>
+        <div className="text-center text-muted mb-4 mt-3">
+          <small>Or sign in with credentials</small>
+        </div>
 
         { errors.error && <div className="alert alert-danger">{errors.error}</div> }
-
-
-
-
-                  
-             
-                    <TextFieldGroup
-                        field="email"
-                        label="Email"
-                        value={email}
-                        error={errors.email}
-                        onChange={this.onChange}
-                      />
-                  
-
+      
+        <TextFieldGroup
+          field="email"
+          placeholder="Email"
+          icon="icon-email-85"
+          value={email}
+          error={errors.email}
+          onChange={this.onChange}
+        />   
         <TextFieldGroup
           field="password"
-          label="Password"
+          placeholder="Password"
+          icon="icon-key-25"
           value={password}
           error={errors.password}
           onChange={this.onChange}
           type="password"
         />
-
+        
+        <div className="form-check mt-3">
+          <label className="form-check-label">
+            <input className="form-check-input" type="checkbox" checked />
+            <span className="form-check-sign"></span>
+            Remember me!
+          </label>
+        </div>
+        <br />
         <div className="form-group">
-          <button className="btn btn-primary btn-lg" disabled={isLoading}>
-            Login
-          </button>
+          <div className="text-center">
+            <button className="btn btn-primary btn-lg" disabled={isLoading}>
+              Sign in
+            </button>
+          </div>
         </div>
       </form>
     )

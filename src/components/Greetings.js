@@ -5,15 +5,15 @@ class Greetings extends React.Component {
     return (
       <div className="jumbotron">
         <h1>Helooooooooo</h1>
-        <div class="row">
+        <div className="row">
             <div class="col-md-12">
-              <button class="btn">Default</button>
-              <button class="btn btn-primary">Primary</button>
-              <button class="btn btn-info">Info</button>
-              <button class="btn btn-success">Success</button>
-              <button class="btn btn-warning">Warning</button>
-              <button class="btn btn-danger">Danger</button>
-              <button class="btn btn-neutral">Neutral</button>
+              <button className="btn">Default</button>
+              <button className="btn btn-primary">Primary</button>
+              <button className="btn btn-info">Info</button>
+              <button className="btn btn-success">Success</button>
+              <button className="btn btn-warning">Warning</button>
+              <button className="btn btn-danger">Danger</button>
+              <button className="btn btn-neutral">Neutral</button>
             </div>
           </div>
       </div>
