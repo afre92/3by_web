@@ -67,11 +67,13 @@ export default class SignupForm extends Component {
     const { errors } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
-        <h1>Join our community</h1>
-
+        <div className="text-center">
+          <h1>Join our community</h1>
+        </div>
         <TextFieldGroup
           error={errors.username}
-          label="username"
+          placeholder="Username"
+          icon="icon-single-02"
           checkUserExists={this.checkUserExists}
           onChange={this.onChange}
           value={this.state.username}
@@ -80,7 +82,8 @@ export default class SignupForm extends Component {
 
         <TextFieldGroup
           error={errors.email}
-          label="email"
+          placeholder="Email"
+          icon="icon-email-85"
           checkUserExists={this.checkUserExists}
           onChange={this.onChange}
           value={this.state.email}
@@ -89,7 +92,8 @@ export default class SignupForm extends Component {
 
         <TextFieldGroup
           error={errors.password}
-          label="password"
+          placeholder="Password"
+          icon="icon-lock-circle"
           onChange={this.onChange}
           value={this.state.password}
           field="password"
@@ -98,17 +102,20 @@ export default class SignupForm extends Component {
 
         <TextFieldGroup
           error={errors.password_confirmation}
-          label="password_confirmation"
+          placeholder="Password confirmation"
+          icon="icon-lock-circle"
           onChange={this.onChange}
           value={this.state.password_confirmation}
           field="password_confirmation"
           type="password"
         />
-
+        <br />
         <div className="form-group">
-          <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-primary btn-lg">
-            sign up
-          </button>
+          <div className="text-center">
+            <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-primary btn-lg">
+              Sign Up
+            </button>
+          </div>
         </div>
 
       </form>

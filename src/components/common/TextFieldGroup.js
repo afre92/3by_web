@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 export default function TextFieldGroup({ field, value, error, placeholder, type, onChange, checkUserExists, icon}) {
     return (
-        <div className={classnames('input-group input-group-alternative', { 'form-control-danger': error })}>
+        <div className={classnames('input-group input-group-alternative', { 'has-danger': error })}>
           <div className="input-group-prepend">
             <div className="input-group-text">
               <i className={`tim-icons ${icon}`}></i>
@@ -19,7 +19,9 @@ export default function TextFieldGroup({ field, value, error, placeholder, type,
             value={value}
             className="form-control"
           />
+          <div className="w-100">
           {error && <span className='help-block'>{error}</span>}
+          </div>
         </div> 
     )
 }
