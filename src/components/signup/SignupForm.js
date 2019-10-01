@@ -66,10 +66,10 @@ export default class SignupForm extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="card card-register content">
+      <div className="card card-register">
         <div className="card-header">
           <img className="card-img" src="../assets/img/square1.png" alt="Card image" />
-          <h4 className="card-title">Register</h4>
+          <h4 className="card-title"> Register</h4>
         </div>
         <div className="card-body">
 

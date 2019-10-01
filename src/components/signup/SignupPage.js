@@ -12,7 +12,7 @@ class SignupPage extends Component {
       <div className="register-page">
         <div id="square7" className="square square-7"></div>
         <div id="square8" className="square square-8"></div>
-        <div className="col-md-4 col-md-offset-4 offset-md-1">
+        <div className="col-md-4 col-md-offset-4 offset-md-1 register-content">
           <SignupForm userSignupRequest={userSignupRequest} history={this.props.history} addFlashMessage={addFlashMessage} userExists={userExists} />
         </div>
         <div className="register-bg"></div>
