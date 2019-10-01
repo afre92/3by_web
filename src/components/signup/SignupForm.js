@@ -66,59 +66,61 @@ export default class SignupForm extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <form onSubmit={this.onSubmit}>
-        <div className="text-center">
-          <h1>Join our community</h1>
+      <div className="card card-register content">
+        <div className="card-header">
+          <img className="card-img" src="../assets/img/square1.png" alt="Card image" />
+          <h4 className="card-title">Register</h4>
         </div>
-        <TextFieldGroup
-          error={errors.username}
-          placeholder="Username"
-          icon="icon-single-02"
-          checkUserExists={this.checkUserExists}
-          onChange={this.onChange}
-          value={this.state.username}
-          field="username"
-        />
+        <div className="card-body">
 
-        <TextFieldGroup
-          error={errors.email}
-          placeholder="Email"
-          icon="icon-email-85"
-          checkUserExists={this.checkUserExists}
-          onChange={this.onChange}
-          value={this.state.email}
-          field="email"
-        />
+          <form onSubmit={this.onSubmit}>
+            <TextFieldGroup
+              error={errors.username}
+              placeholder="Username"
+              icon="icon-single-02"
+              checkUserExists={this.checkUserExists}
+              onChange={this.onChange}
+              value={this.state.username}
+              field="username"
+            />
 
-        <TextFieldGroup
-          error={errors.password}
-          placeholder="Password"
-          icon="icon-lock-circle"
-          onChange={this.onChange}
-          value={this.state.password}
-          field="password"
-          type="password"
-        />
+            <TextFieldGroup
+              error={errors.email}
+              placeholder="Email"
+              icon="icon-email-85"
+              checkUserExists={this.checkUserExists}
+              onChange={this.onChange}
+              value={this.state.email}
+              field="email"
+            />
 
-        <TextFieldGroup
-          error={errors.password_confirmation}
-          placeholder="Password confirmation"
-          icon="icon-lock-circle"
-          onChange={this.onChange}
-          value={this.state.password_confirmation}
-          field="password_confirmation"
-          type="password"
-        />
-        <br />
-        <div className="form-group">
-          <div className="text-center">
-            <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-primary btn-lg">
-              Sign Up
-            </button>
-          </div>
+            <TextFieldGroup
+              error={errors.password}
+              placeholder="Password"
+              icon="icon-lock-circle"
+              onChange={this.onChange}
+              value={this.state.password}
+              field="password"
+              type="password"
+            />
+
+            <TextFieldGroup
+              error={errors.password_confirmation}
+              placeholder="Password confirmation"
+              icon="icon-lock-circle"
+              onChange={this.onChange}
+              value={this.state.password_confirmation}
+              field="password_confirmation"
+              type="password"
+            />
+          </form>
         </div>
-
-      </form>
+        <div className="card-footer">
+          <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-info btn-round btn-lg">
+                  Sign Up
+          </button>
+        </div>
+      </div>
     )
   }
 }
