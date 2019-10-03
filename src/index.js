@@ -6,6 +6,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Greetings from './components/Greetings';
+import Dashboard from './components/Dashboard';
 import SignupPage from './components/signup/SignupPage';
 import LoginPage from './components/login/LoginPage';
 import { Provider } from 'react-redux';
@@ -15,6 +16,7 @@ import rootReducer from './rootReducer'
 import setAuthorizationToken from './utils/setAuthorizationToken'
 import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
+import requireAuth from './utils/requireAuth'
 
 
 const store = createStore(
@@ -38,6 +40,8 @@ render((
         <Route exact path="/" component={Greetings} />
         <Route path="/signup" component={SignupPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/dashboard" component={requireAuth(Dashboard)} />
+        
       </div>
     </Router>
   </Provider>
