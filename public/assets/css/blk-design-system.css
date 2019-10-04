@@ -71,6 +71,10 @@
 *::after {
   box-sizing: border-box;
 }
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .center-horizontally {
   display: flex;
