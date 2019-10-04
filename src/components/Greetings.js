@@ -13,7 +13,6 @@ class Greetings extends React.Component {
               <button className="btn btn-success">Success</button>
               <button className="btn btn-warning">Warning</button>
               <button className="btn btn-danger">Danger</button>
-              <button className="btn btn-neutral">Neutral</button>
             </div>
           </div>
       </div>
