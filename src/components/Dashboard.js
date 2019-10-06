@@ -69,7 +69,6 @@ export default class Dashboard extends Component {
                     <div class="numbers">
                     
                     <i class="fa fa-grin-squint-tears"></i>
-                    <p></p>
                       <p class="card-category text-white mt-4">FUNNY</p>
                     </div>
                   </div>
