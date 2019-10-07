@@ -20853,3 +20853,14 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 }
 
 /*# sourceMappingURL=kit-free.css.map */
+
+
+/* CUSTOM CSS */
+
+
+.card.bordered-card:hover {
+  box-shadow: 4px 4px 12px rgba(0,0,0,.7);
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  cursor: pointer;
+}
