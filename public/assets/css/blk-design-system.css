@@ -20838,7 +20838,12 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 }
  .dashboard {
    height: 100vh;
-   background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(253, 93, 147,0.7));
+   /* background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(253, 93, 147,0.7)); */
+ }
+
+ .playlist {
+  height: 100vh;
+   /* background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(253, 93, 147,0.7)); */
  }
 
 .card-body i {

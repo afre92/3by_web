@@ -13,6 +13,13 @@ export default class Dashboard extends Component {
 
   render() {
     return (
+<div className="landing-page">
+<div className="page-header" >
+      <img src="../assets/img/blob.png" class="path" />
+      <img src="../assets/img/path2.png" class="path2" />
+      <img src="../assets/img/triunghiuri.png" class="shapes triangle" />
+      <img src="../assets/img/waves.png" class="shapes wave" />
+      <img src="../assets/img/cercuri.png" class="shapes circle" />
       <div className="dashboard center-horizontally">
       
         <div className="dashboard-tiles col-md-9 col-sm-12 " >
@@ -86,6 +93,10 @@ export default class Dashboard extends Component {
               </div>
             </div>
         </div>
+      </div> 
+
+      </div>
+
       </div> 
     )
   }
