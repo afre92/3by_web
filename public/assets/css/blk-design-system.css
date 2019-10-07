@@ -20871,3 +20871,20 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   text-align: center;
   margin-bottom: 50px;
 }
+
+.playlist-info .track-art img {
+  width: 250px;
+}
+
+.display-inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.white-line {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.playlist-thumbnail {
+  width: 50px;
+}
