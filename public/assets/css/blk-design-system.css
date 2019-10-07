@@ -71,40 +71,7 @@
 *::after {
   box-sizing: border-box;
 }
-.flex-container {
-  display: flex;
-  flex-direction: row;
-}
- .dashboard {
-   height: 100vh;
-   background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(253, 93, 147,0.45));
- }
 
-.card-body i {
-  color: white !important;
-  font-size: -webkit-xxx-large;
-}
-
-.card-body p {
-  font-size: large;
-}
-
-.bordered-card {
-  border: 2px solid rgba(255, 255, 255, 0.8) !important;
-  padding: 10px !important;
-  margin: 10px !important;
-}
-
-.center-horizontally {
-  display: flex;
-  justify-content: center;
-}
-
-.register-content {
-  margin-top: 10%;
-  text-align: center;
-  margin-bottom: 50px;
-}
 
 html {
   font-family: sans-serif;
@@ -20863,4 +20830,39 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
   cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+ .dashboard {
+   height: 100vh;
+   background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(253, 93, 147,0.7));
+ }
+
+.card-body i {
+  color: white !important;
+  font-size: -webkit-xxx-large;
+}
+
+.card-body p {
+  font-size: large;
+}
+
+.bordered-card {
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
+  padding: 10px !important;
+  margin: 10px !important;
+}
+
+.center-horizontally {
+  display: flex;
+  justify-content: center;
+}
+
+.register-content {
+  margin-top: 10%;
+  text-align: center;
+  margin-bottom: 50px;
 }

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Greetings from './components/Greetings';
 import Dashboard from './components/Dashboard';
 import SignupPage from './components/signup/SignupPage';
+import Playlist from './components/video/Playlist';
 import LoginPage from './components/login/LoginPage';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'
@@ -41,6 +42,7 @@ render((
         <Route path="/signup" component={SignupPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/dashboard" component={requireAuth(Dashboard)} />
+        <Route path="/playlist" component={requireAuth(Playlist)} />
         
       </div>
     </Router>

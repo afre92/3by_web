@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 
 export default class Dashboard extends Component {
+
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.props.history.push('/playlist');
+  }
+
   render() {
     return (
       <div className="dashboard center-horizontally">
@@ -12,64 +22,64 @@ export default class Dashboard extends Component {
         </div>
 
           <div className="row center-horizontally pt-4">
-              <div class="card bg-light-white bordered-card col-md-3 col-sm-5">
-                <div class="card-body text-center">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                      <i class="fa fa-award"></i>
-                        <p class="card-category text-white mt-4">DAILY 3</p>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+                <div className="card-body text-center">
+                  <div className="justify-content-center">
+                    <div className="numbers">
+                      <i className="fa fa-award"></i>
+                        <p className="card-category text-white mt-4">DAILY 3</p>
                       </div>
                   </div>
                 </div>
               </div>
-              <div class="card bg-light-white bordered-card col-md-3 col-sm-5">
-                <div class="card-body text-center">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                    <i class="fa fa-chart-line"></i>
-                      <p class="card-category text-white mt-4">TOP TRENDING</p>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick} >
+                <div className="card-body text-center">
+                  <div className="justify-content-center">
+                    <div className="numbers">
+                    <i className="fa fa-chart-line"></i>
+                      <p className="card-category text-white mt-4">TOP TRENDING</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card bg-light-white bordered-card col-md-3 col-sm-5">
-                <div class="card-body text-center">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                    <i class="fa fa-newspaper"></i>
-                      <p class="card-category text-white mt-4">IN THE NEWS </p>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+                <div className="card-body text-center">
+                  <div className="justify-content-center">
+                    <div className="numbers">
+                    <i className="fa fa-newspaper"></i>
+                      <p className="card-category text-white mt-4">IN THE NEWS </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="card bg-light-white bordered-card col-md-3 col-sm-5">
-                <div class="card-body text-center">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                    <i class="fa fa-hourglass-half"></i>
-                      <p class="card-category text-white mt-4">BRAND NEW</p>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+                <div className="card-body text-center">
+                  <div className="justify-content-center">
+                    <div className="numbers">
+                    <i className="fa fa-hourglass-half"></i>
+                      <p className="card-category text-white mt-4">BRAND NEW</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card  bg-light-white bordered-card col-md-3 col-sm-5">
-                <div class="card-body text-center">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                    <i class="fa fa-flask"></i>
-                      <p class="card-category text-white mt-4">GEEKY</p>
+              <div className="card  bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+                <div className="card-body text-center">
+                  <div className="justify-content-center">
+                    <div className="numbers">
+                    <i className="fa fa-flask"></i>
+                      <p className="card-category text-white mt-4">GEEKY</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card bg-light-white bordered-card col-md-3 col-sm-5">
-                <div class="card-body text-center">
-                  <div class="justify-content-center">
-                    <div class="numbers">
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+                <div className="card-body text-center">
+                  <div className="justify-content-center">
+                    <div className="numbers">
                     
-                    <i class="fa fa-grin-squint-tears"></i>
-                      <p class="card-category text-white mt-4">FUNNY</p>
+                    <i className="fa fa-grin-squint-tears"></i>
+                      <p className="card-category text-white mt-4">FUNNY</p>
                     </div>
                   </div>
                 </div>
