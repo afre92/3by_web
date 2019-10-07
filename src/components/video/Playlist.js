@@ -30,7 +30,7 @@ export default class Playlist extends Component {
                 </div>
                 <div className="white-line mt-5 mb-5"></div>
                     <div className="playlist">
-                    <table class="table playlist-table">
+                    <table className="table playlist-table">
                         <thead>
                             <tr className="text-center">
                             <th scope="col"></th>
@@ -41,28 +41,28 @@ export default class Playlist extends Component {
                         </thead>
                         <tbody>
                             <tr className="text-center">
-                                <th scope="row" className="center-horizontally">
-                                    <img src="assets/img/lora.jpg" alt="Rounded image" class="img-fluid rounded shadow playlist-thumbnail" />
-                                </th>
-                                <td>Mark Otto</td>
-                                <td> 456M</td>
-                            <td>34 sec</td>
+                                <td scope="row" className="center-horizontally">
+                                    <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+                                </td>
+                                <td><p>Mark Otto</p></td>
+                                <td><p>456M</p> </td>
+                            <td><p>34 sec</p></td>
                             </tr>
                             <tr className="text-center">
-                                <th scope="row" className="center-horizontally">
-                                    <img src="assets/img/lora.jpg" alt="Rounded image" class="img-fluid rounded shadow playlist-thumbnail" />
-                                </th>
-                                <td>Jacob Thornton</td>
-                                <td>33k</td>
-                                <td>1:06 min</td>
+                                <td scope="row" className="center-horizontally">
+                                    <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+                                </td>
+                                <td><p> Jacob Thornton</p></td>
+                                <td><p>33k</p></td>
+                                <td><p>1:06 min</p></td>
                             </tr>
                             <tr className="text-center">
-                                <th scope="row" className="center-horizontally">
-                                    <img src="assets/img/lora.jpg" alt="Rounded image" class="img-fluid rounded shadow playlist-thumbnail" />
-                                </th>
-                                <td>Larry the Bird</td>
-                                <td> 234K</td>
-                                <td>4:40 min</td>
+                                <td scope="row" className="center-horizontally">
+                                    <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+                                </td>
+                                <td><p>Larry the Bird</p></td>
+                                <td><p>234K</p></td>
+                                <td><p>4:40 min</p></td>
                             </tr>
                         </tbody>
                         </table>

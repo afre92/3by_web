@@ -20865,6 +20865,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   display: flex;
   justify-content: center;
 }
+/*  Playlist  */
 
 .register-content {
   margin-top: 10%;
@@ -20888,3 +20889,26 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .playlist-thumbnail {
   width: 50px;
 }
+
+.playlist .playlist-table tbody tr {
+  cursor: pointer;
+}
+
+.playlist .playlist-table tbody tr td {
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.playlist .playlist-table tbody tr:hover td p {
+  color: var(--primary);
+}
+
+.playlist .playlist-table tbody tr:hover td{
+ border-color: var(--primary)
+}
+
+.playlist .playlist-table tbody tr:hover + tr td {
+  border-color: var(--primary)
+ }
