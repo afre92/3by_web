@@ -20894,21 +20894,21 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   cursor: pointer;
 }
 
-.playlist .playlist-table tbody tr td {
+/* .playlist .playlist-table tbody tr td {
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
-}
+} */
 
 .playlist .playlist-table tbody tr:hover td p {
-  color: var(--primary);
+  color: rgb(225,78,202);
 }
 
-.playlist .playlist-table tbody tr:hover td{
- border-color: var(--primary)
+.playlist .playlist-table tbody tr:hover td {
+ border-color: rgba(225,78,202,.8);
 }
 
 .playlist .playlist-table tbody tr:hover + tr td {
-  border-color: var(--primary)
+  border-color: rgba(225,78,202, .8);
  }

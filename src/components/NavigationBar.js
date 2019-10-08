@@ -14,9 +14,32 @@ class NavigationBar extends Component {
     const { isAuthenticated } = this.props.auth
 
     const userLinks = (
-      <ul className="nav navbar-nav navbar-right">
-        <li><a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
-    </ul>
+      <ul className="navbar-nav">
+        <li className="nav-item p-0">
+          <Link to="/" className="nav-link">
+            <i className="fab fa-twitter"></i>
+            <p className="d-lg-none d-xl-none">Twitter</p>
+          </Link>
+        </li>
+        <li className="nav-item p-0">
+          <Link to="/" className="nav-link">
+            <i className="fab fa-facebook-square"></i>
+            <p className="d-lg-none d-xl-none">Facebook</p>
+          </Link>
+        </li>
+        <li className="nav-item p-0">
+          <Link to="/" className="nav-link">
+            <i className="fab fa-instagram"></i>
+            <p className="d-lg-none d-xl-none">Instagram</p>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" href="/">Profile</Link>
+        </li>
+        <li className="nav-item">
+          <a href="#" onClick={this.logout.bind(this)} className="nav-link">Logout</a>
+        </li>
+      </ul>
     )
 
     const guestLinks = (
@@ -27,9 +50,11 @@ class NavigationBar extends Component {
     )
     return (
       <nav className="navbar navbar-expand-lg navbar-transparent">
-        <div className="container-fluid">
+        <div className="container">
           <div className="navbar-header">
-            <Link to="/" className="navbar-brand"> 3by </Link>
+            <Link to="/" className="navbar-brand">
+              <span>3BY•</span>  Video Concierge
+            </Link>
           </div>
 
           <div className="navbar-colapse">
