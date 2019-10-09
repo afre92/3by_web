@@ -6,21 +6,22 @@ class Greetings extends React.Component {
       
       <div className="wrapper">
         <div className="landing-page">
-      <div className="page-header">
+      <div className="page-header position-inherit">
         <img src="../assets/img/blob.png" className="path"/>
         <img src="../assets/img/path2.png" className="path2"/>
         <img src="../assets/img/triunghiuri.png" className="shapes triangle"/>
         <img src="../assets/img/waves.png" className="shapes wave"/>
         <img src="../assets/img/patrat.png" className="shapes squares"/>
         <img src="../assets/img/cercuri.png" className="shapes circle"/>
-        <div className="content-center">
+        <div className="container pt-200">
           <div className="row row-grid justify-content-between align-items-center text-left">
-            <div className="col-lg-6 col-md-6">
-              <h1 className="text-white">We keep your coin
+            <div className="col-lg-5 col-md-5 ml-5">
+              <h1 className="text-white">Welcome to 3by, your AI
                 <br/>
-                <span className="text-white">secured</span>
+                <span className="text-white">video concierge</span>
               </h1>
-              <p className="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel...</p>
+              <p className="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and 
+              weet mornings of spring which I enjoy with my whole heart. I am alone feel...</p>
               <div className="btn-wrapper mb-3">
                 <p className="category text-success d-inline">From 9.99%/mo</p>
                 <a href="#blk" className="btn btn-success btn-link btn-sm"><i className="tim-icons icon-minimal-right"></i></a>
@@ -39,14 +40,47 @@ class Greetings extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-5">
+            {/* <div className="col-lg-4 col-md-5">
               <img src="../assets/img/etherum.png" alt="Circle image" className="img-fluid"/>
-            </div>
+            </div> */}
+            <div class="col-md-5 section-safe mr-5">
+              <img src="../assets/img/chester-wade.jpg" class="img-fluid floating"/>
+                <div class="card card-stats bg-danger">
+                    <div class="card-body">
+                        <div class="justify-content-center">
+                          <div class="numbers">
+                            <p class="card-title">100%</p>
+                            <p class="card-category text-white">Safe</p>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card card-stats bg-info">
+                    <div class="card-body">
+                      <div class="justify-content-center">
+                        <div class="numbers">
+                          <p class="card-title">573 K</p>
+                          <p class="card-category text-white">Satisfied customers</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-stats bg-default">
+                    <div class="card-body">
+                      <div class="justify-content-center">
+                        <div class="numbers">
+                          <p class="card-title">10 425</p>
+                          <p class="card-category text-white">Business</p>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
           </div>
         </div>
       </div>
-      <section className="section section-lg">
-        <section className="section">
+      <section className=" section-lg">
+        <section className="">
           <img src="../assets/img/path4.png" className="path"/>
           <div className="container">
             <div className="row row-grid justify-content-between">
@@ -155,7 +189,7 @@ class Greetings extends React.Component {
         <img src="../assets/img/path4.png" className="path"/>
         <img src="../assets/img/path5.png" className="path2"/>
         <img src="../assets/img/path2.png" className="path3"/>
-        <div className="container">
+        <div className="container section">
           <div className="row justify-content-center">
             <div className="col-lg-12">
               <h1 className="text-center">Your best benefit</h1>
@@ -291,99 +325,6 @@ class Greetings extends React.Component {
             <div className="card-body">
               <div className="chart-area">
                 <canvas id="chartBig"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="section section-lg section-coins">
-        <img src="../assets/img/path3.png" className="path"/>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4">
-              <hr className="line-info"/>
-              <h1>Choose the coin
-                <span className="text-info">that fits your needs</span>
-              </h1>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card card-coin card-plain">
-                <div className="card-header">
-                  <img src="../assets/img/bitcoin.png" className="img-center img-fluid"/>
-                </div>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-md-12 text-center">
-                      <h4 className="text-uppercase">Light Coin</h4>
-                      <span>Plan</span>
-                      <hr className="line-primary"/>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <ul className="list-group">
-                      <li className="list-group-item">50 messages</li>
-                      <li className="list-group-item">100 emails</li>
-                      <li className="list-group-item">24/7 Support</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-footer text-center">
-                  <button className="btn btn-primary btn-simple">Get plan</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card card-coin card-plain">
-                <div className="card-header">
-                  <img src="../assets/img/etherum.png" className="img-center img-fluid" />
-                </div>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-md-12 text-center">
-                      <h4 className="text-uppercase">Dark Coin</h4>
-                      <span>Plan</span>
-                      <hr className="line-success"/>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <ul className="list-group">
-                      <li className="list-group-item">150 messages</li>
-                      <li className="list-group-item">1000 emails</li>
-                      <li className="list-group-item">24/7 Support</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-footer text-center">
-                  <button className="btn btn-success btn-simple">Get plan</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card card-coin card-plain">
-                <div className="card-header">
-                  <img src="../assets/img/ripp.png" className="img-center img-fluid" />
-                </div>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-md-12 text-center">
-                      <h4 className="text-uppercase">Bright Coin</h4>
-                      <span>Plan</span>
-                      <hr className="line-info"/>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <ul className="list-group">
-                      <li className="list-group-item">350 messages</li>
-                      <li className="list-group-item">10K emails</li>
-                      <li className="list-group-item">24/7 Support</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-footer text-center">
-                  <button className="btn btn-info btn-simple">Get plan</button>
-                </div>
               </div>
             </div>
           </div>

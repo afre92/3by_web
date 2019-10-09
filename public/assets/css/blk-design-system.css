@@ -18351,12 +18351,12 @@ hr.line-deafult {
   .section-safe .card.card-stats:nth-of-type(2) {
     width: 200px;
     top: 150px;
-    left: -81px;
+    right: -81px;
   }
   .section-safe .card.card-stats:nth-of-type(3) {
     width: 130px;
     top: 240px;
-    left: 300px;
+    right: 300px;
   }
   .section-safe .card.card-stats .numbers {
     text-align: center;
@@ -20911,4 +20911,16 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 
 .playlist .playlist-table tbody tr:hover + tr td {
   border-color: rgba(225,78,202, .8);
+ }
+
+ .position-inherit {
+   position: inherit !important;
+ }
+
+ .pt-200 {
+   padding-top: 200px !important;
+ }
+
+ .pt-100 {
+  padding-top: 100px !important;
  }
