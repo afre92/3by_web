@@ -20924,3 +20924,14 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
  .pt-100 {
   padding-top: 100px !important;
  }
+
+
+ /* .bordered-card:hover {
+  border: 2px solid #e14eca !important;
+ } */
+
+
+ .modal-black .modal-content {
+  background: #1f2251;
+  color: hsla(0,0%,100%,.8);
+}

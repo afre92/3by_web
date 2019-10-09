@@ -25,7 +25,6 @@ export default class Dashboard extends Component {
         <div className="dashboard-tiles col-md-9 col-sm-12 " >
         <div className="text-center mt-4">
           <h1> Hi, I'm your video concierge </h1>
-          <hr class="line-success"></hr>
           <h3 > It's Monday afternoon, I've for videos for ...</h3>
         </div>
 
@@ -92,10 +91,16 @@ export default class Dashboard extends Component {
                   </div>
                 </div>
               </div>
+
             </div>
-            <div class="btn-wrapper mb-3 ml-5
-            "><p class="category text-success d-inline">VIEW MORE</p><a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-right"></i></a></div>
+            <div class="btn-wrapper col-md-12 text-center mt-5">
+              <p class="category text-success d-inline">VIEW MORE</p>
+              <a href="#blk" class="btn btn-success btn-link btn-sm">
+                <i class="tim-icons icon-minimal-down"></i>
+              </a>
+            </div>
         </div>
+   
       </div> 
 
       </div>
