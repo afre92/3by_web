@@ -18,6 +18,7 @@ import setAuthorizationToken from './utils/setAuthorizationToken'
 import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
+import Profile from './components/Profile';
 
 
 const store = createStore(
@@ -41,6 +42,7 @@ render((
         <Route exact path="/" component={Greetings} />
         <Route path="/signup" component={SignupPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/profile" component={requireAuth(Profile)} />
         <Route path="/dashboard" component={requireAuth(Dashboard)} />
         <Route path="/playlist" component={requireAuth(Playlist)} />
         
