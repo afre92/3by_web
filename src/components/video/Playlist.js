@@ -7,7 +7,7 @@ class Playlist extends Component {
         this.props.fetchPlaylist();
     }
     render() {
-        console.log(this.props.playlis)
+        console.log(this.props.playlist)
         return (
             
             <div className="playlist center-horizontally pt-5">
@@ -81,7 +81,7 @@ class Playlist extends Component {
 }
 
 const mapStateToProps = state => ({
-    playlist: state.playlist
+    playlist: state.playlists.playlist
 })
 
 export default connect(mapStateToProps, { fetchPlaylist})(Playlist)
