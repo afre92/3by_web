@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchPlaylist } from '../../actions/playlistActions'
 
-export default class Playlist extends Component {
+class Playlist extends Component {
+    componentDidMount(){
+        this.props.fetchPlaylist();
+    }
     render() {
+        console.log(this.props.playlis)
         return (
+            
             <div className="playlist center-horizontally pt-5">
                 <div className="col-md-9 col-sm-12">
                     <div className="playlist-info row">
@@ -72,3 +79,9 @@ export default class Playlist extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    playlist: state.playlist
+})
+
+export default connect(mapStateToProps, { fetchPlaylist})(Playlist)
