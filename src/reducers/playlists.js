@@ -8,7 +8,6 @@ export default function(state = initalState, action) {
   
   switch(action.type){
     case FETCH_PLAYLIST:
-  
       return {
         ...state,
         playlist: action.payload.data

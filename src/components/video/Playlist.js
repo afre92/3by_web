@@ -3,11 +3,34 @@ import { connect } from 'react-redux'
 import { fetchPlaylist } from '../../actions/playlistActions'
 
 class Playlist extends Component {
-    componentDidMount(){
+    // constructor(props){
+    //     super(props)
+    //     this.props.fetchPlaylist()
+    // }
+    componentWillMount(){
         this.props.fetchPlaylist();
+        console.log('hey')
+        
     }
     render() {
-        console.log(this.props.playlist)
+        debugger
+        // debugger
+        // const { name, videos} = this.props.playlist;
+        // debugger
+        console.log('loaded')
+        // debugger
+        // const videoItems = videos.map(video => (
+        //     <tr key={video.id}className="text-center">
+        //         <td scope="row" className="center-horizontally">
+        //             <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+        //         </td>
+        //         <td><p>Mark Otto</p></td>
+        //         <td><p>456M</p> </td>
+        //         <td><p>Link</p></td>
+        //     <td><p>34 sec</p></td>
+        //     </tr>
+        // ))
+
         return (
             
             <div className="playlist center-horizontally pt-5">
@@ -18,7 +41,7 @@ class Playlist extends Component {
                         </div>
                     <div className="track-info col-md-8">
                         <div className="track-title text-white">
-                            <h1 className="mb-0"> PLAYLIST TITLE</h1>
+                            <h1 className="mb-0"> "NAme"</h1>
                             <hr class="line-success"></hr>
                         </div>
                         <div className="track-creator text-white pt-3">
@@ -43,6 +66,7 @@ class Playlist extends Component {
                             <th scope="col"></th>
                             <th scope="col">Creator</th>
                             <th scope="col">Views</th>
+                            <th scope="col">Likes</th>
                             <th scope="col">Length</th>
                             </tr>
                         </thead>
@@ -80,8 +104,10 @@ class Playlist extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    playlist: state.playlists.playlist
-})
+function mapStateToProps(state) {
+    return {
+        playlist: state.playlists.playlist
+    }
+  }
 
 export default connect(mapStateToProps, { fetchPlaylist})(Playlist)
