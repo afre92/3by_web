@@ -13,7 +13,8 @@ class Playlist extends Component {
         super(props)
         this.state = {
             playlist: {
-                videos: []
+                videos: [],
+                name: ""
             }
         }
 
@@ -29,7 +30,18 @@ class Playlist extends Component {
 
 
     renderPlaylist(){
-        
+        debugger
+        const videosList = this.state.playlist.videos[0].map(video => (
+            
+            <tr className="text-center" key={video.id}>
+            <td scope="row" className="center-horizontally">
+                <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+            </td>
+            <td><p>{video.title}</p></td>
+            <td><p>234K</p></td>
+            <td><p>4:40 min</p></td>
+        </tr>
+        ))
         return (
             <div className="playlist center-horizontally pt-5" >
             <div className="col-md-9 col-sm-12">
@@ -69,30 +81,7 @@ class Playlist extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="text-center">
-                            <td scope="row" className="center-horizontally">
-                                <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
-                            </td>
-                            <td><p>Mark Otto</p></td>
-                            <td><p>456M</p> </td>
-                        <td><p>34 sec</p></td>
-                        </tr>
-                        <tr className="text-center">
-                            <td scope="row" className="center-horizontally">
-                                <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
-                            </td>
-                            <td><p> Jacob Thornton</p></td>
-                            <td><p>33k</p></td>
-                            <td><p>1:06 min</p></td>
-                        </tr>
-                        <tr className="text-center">
-                            <td scope="row" className="center-horizontally">
-                                <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
-                            </td>
-                            <td><p>Larry the Bird</p></td>
-                            <td><p>234K</p></td>
-                            <td><p>4:40 min</p></td>
-                        </tr>
+                        {videosList}
                     </tbody>
                     </table>
                 </div>
@@ -103,9 +92,9 @@ class Playlist extends Component {
 
     render() {
 
-        const { playlist } = this.state
+        const { videos } = this.state.playlist
 
-            return playlist.videos.length ? this.renderPlaylist() : (
+            return videos.length ? this.renderPlaylist() : (
               <span>Loading wells...</span>
             )
 
