@@ -30,12 +30,11 @@ class Playlist extends Component {
 
 
     renderPlaylist(){
-        debugger
         const videosList = this.state.playlist.videos[0].map(video => (
             
             <tr className="text-center" key={video.id}>
             <td scope="row" className="center-horizontally">
-                <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+                <img src={video.thumbnails.default.url} alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
             </td>
             <td><p>{video.title}</p></td>
             <td><p>234K</p></td>
