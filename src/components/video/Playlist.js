@@ -1,36 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPlaylist } from '../../actions/playlistActions'
+import axios from "axios";
 
 class Playlist extends Component {
-    // constructor(props){
-    //     super(props)
-    //     this.props.fetchPlaylist()
-    // }
-    componentWillMount(){
-        this.props.fetchPlaylist();
-        console.log('hey')
+    // componentWillMount(){
+    //     this.props.fetchPlaylist();
+    //     console.log('hey')
         
+    // }
+    constructor(props){
+        super(props)
+        this.state = {
+            playlist: {}
+        }
     }
-    render() {
-        debugger
-        // debugger
-        // const { name, videos} = this.props.playlist;
-        // debugger
-        console.log('loaded')
-        // debugger
-        // const videoItems = videos.map(video => (
-        //     <tr key={video.id}className="text-center">
-        //         <td scope="row" className="center-horizontally">
-        //             <img src="assets/img/lora.jpg" alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
-        //         </td>
-        //         <td><p>Mark Otto</p></td>
-        //         <td><p>456M</p> </td>
-        //         <td><p>Link</p></td>
-        //     <td><p>34 sec</p></td>
-        //     </tr>
-        // ))
 
+    componentWillMount(){
+        axios.get('http://localhost:3001/playlist/chilling')
+        .then(res => res)
+        .then(playlist => this.setState({playlist: playlist.data})
+      )
+    }
+
+    render() {
         return (
             
             <div className="playlist center-horizontally pt-5">
@@ -41,7 +34,7 @@ class Playlist extends Component {
                         </div>
                     <div className="track-info col-md-8">
                         <div className="track-title text-white">
-                            <h1 className="mb-0"> "NAme"</h1>
+                            <h1 className="mb-0"> {this.state.playlist.name}</h1>
                             <hr class="line-success"></hr>
                         </div>
                         <div className="track-creator text-white pt-3">
@@ -104,10 +97,10 @@ class Playlist extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        playlist: state.playlists.playlist
-    }
-  }
+// function mapStateToProps(state) {
+//     return {
+//         playlist: state.playlists.playlist
+//     }
+//   }
 
-export default connect(mapStateToProps, { fetchPlaylist})(Playlist)
+export default connect(null, { fetchPlaylist})(Playlist)
