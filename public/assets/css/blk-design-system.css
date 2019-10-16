@@ -20940,3 +20940,8 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .playlist-title {
   text-transform: uppercase;
 }
+
+.video-title {
+  word-wrap: break-word;
+  max-width: 150px;
+}

@@ -44,16 +44,18 @@ class Playlist extends Component {
             <td scope="row" className="center-horizontally">
                 <img src={video.thumbnails.default.url} alt="Rounded" className="img-fluid rounded shadow playlist-thumbnail" />
             </td>
-            <td><p>{video.title}</p></td>
+            <td className="video-title"><p>{video.title}</p></td>
             <td><p>{video.view_count > 1000 && video.view_count < 1000000? `${Math.round(video.view_count/1000)}K` : `${Math.round(video.view_count/1000000)}M`}</p></td>
             <td>
 
                 {this.videoRatingBar(video.like_count, video.dislike_count)}
             </td>
-            <td><p>4:40 min</p></td>
+            <td><p>{video.length.substring(video.length.indexOf(":") + 1)}</p></td>
         </tr>
         ))
         return (
+            <div className="page-header">
+                <div className="profile-page">
             <div className="playlist center-horizontally pt-5" >
             <div className="col-md-9 col-sm-12">
                 <div className="playlist-info row">
@@ -97,6 +99,8 @@ class Playlist extends Component {
                     </table>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
         )
     }
