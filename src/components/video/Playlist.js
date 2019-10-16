@@ -15,6 +15,7 @@ class Playlist extends Component {
         }
 
         this.renderPlaylist = this.renderPlaylist.bind(this)
+        this.videoRatingBar = this.videoRatingBar.bind(this)
     }
 
     componentWillMount(){
@@ -24,17 +25,31 @@ class Playlist extends Component {
       )
     }
 
+    videoRatingBar(likes, dislikes){
+        const totalReactions = likes + dislikes
+        const percentage = Math.round(likes/totalReactions * 100)
+        return (
+        <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={percentage} aria-valuemin="0" aria-valuemax="100" style={{width: `${percentage}%`}}>
+                <span class="progress-value">{percentage}%</span>    
+            </div>
+        </div>
+        )
+    }
+
 
     renderPlaylist(){
         const videosList = this.state.playlist.videos[0].map(video => (
-            
             <tr className="text-center" key={video.id}>
             <td scope="row" className="center-horizontally">
-                <img src={video.thumbnails.default.url} alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
+                <img src={video.thumbnails.default.url} alt="Rounded" className="img-fluid rounded shadow playlist-thumbnail" />
             </td>
             <td><p>{video.title}</p></td>
             <td><p>{video.view_count > 1000 && video.view_count < 1000000? `${Math.round(video.view_count/1000)}K` : `${Math.round(video.view_count/1000000)}M`}</p></td>
-            <td><p>4:40 min</p></td>
+            <td>
+
+                {this.videoRatingBar(video.like_count, video.dislike_count)}
+            </td>
             <td><p>4:40 min</p></td>
         </tr>
         ))
