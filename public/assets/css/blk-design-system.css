@@ -20901,16 +20901,17 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 } */
 
 .playlist .playlist-table tbody tr:hover td p {
-  color: rgb(225,78,202);
+  color: rgba(255,255,255,1);
+  font-weight: 300;
 }
 
-.playlist .playlist-table tbody tr:hover td {
- border-color: rgba(225,78,202,.8);
+/* .playlist .playlist-table tbody tr:hover td {
+ border-color: rgba(255,255,255,.8);
 }
 
 .playlist .playlist-table tbody tr:hover + tr td {
-  border-color: rgba(225,78,202, .8);
- }
+  border-color: rgba(255, 255, 255, 0.8);
+ } */
 
  .position-inherit {
    position: inherit !important;

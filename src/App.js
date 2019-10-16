@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import NavigationBar from './components/NavigationBar';
-import Footer from './components/Footer';
 import FlashMessagesList from './components/flash/FlashMessagesList'
 
 function App() {

@@ -22,10 +22,10 @@ class Greetings extends React.Component {
               </h1>
               <p className="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and 
               weet mornings of spring which I enjoy with my whole heart. I am alone feel...</p>
-              <div className="btn-wrapper mb-3">
-                <p className="category text-success d-inline">From 9.99%/mo</p>
-                <a href="#blk" className="btn btn-success btn-link btn-sm"><i className="tim-icons icon-minimal-right"></i></a>
-              </div>
+              {/* <div className="btn-wrapper mb-3">
+                <p className="category text-primary d-inline">From 9.99%/mo</p>
+                <a href="#blk" className="btn btn-primary btn-link btn-sm"><i className="tim-icons icon-minimal-right"></i></a>
+              </div> */}
               <div className="btn-wrapper">
                 <div className="button-container">
                   <button href="javascript:void(0)" className="btn btn-icon btn-simple btn-round btn-neutral">
@@ -40,12 +40,9 @@ class Greetings extends React.Component {
                 </div>
               </div>
             </div>
-            {/* <div className="col-lg-4 col-md-5">
-              <img src="../assets/img/etherum.png" alt="Circle image" className="img-fluid"/>
-            </div> */}
             <div class="col-md-5 section-safe mr-5">
               <img src="../assets/img/chester-wade.jpg" class="img-fluid floating"/>
-                <div class="card card-stats bg-danger">
+                <div class="card card-stats bg-primary">
                     <div class="card-body">
                         <div class="justify-content-center">
                           <div class="numbers">

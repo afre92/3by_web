@@ -52,7 +52,7 @@ class Playlist extends Component {
         </tr>
         ))
         return (
-            <div className=" playlist col-md-12 mb-100">
+            <div className=" playlist col-md-12 section mb-100">
                 <div className="profile-page">
             <div className=" center-horizontally pt-5" >
             <div className="col-md-9 col-sm-12">
@@ -63,7 +63,7 @@ class Playlist extends Component {
                 <div className="track-info col-md-8">
                     <div className="track-title text-white">
                         <h1 className="mb-0 playlist-title"> {this.state.playlist.name}</h1>
-                        <hr class="line-success"></hr>
+                        <hr class="line-primary"></hr>
                     </div>
                     <div className="track-creator text-white pt-3">
                         <h6 className="display-inline "> 

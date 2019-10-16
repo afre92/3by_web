@@ -94,8 +94,8 @@ export default class Dashboard extends Component {
 
             </div>
             <div class="btn-wrapper col-md-12 text-center mt-5">
-              <p class="category text-success d-inline">VIEW MORE</p>
-              <a href="#blk" class="btn btn-success btn-link btn-sm">
+              <p class="category text-primary d-inline">VIEW MORE</p>
+              <a href="#blk" class="btn btn-primary btn-link btn-sm">
                 <i class="tim-icons icon-minimal-down"></i>
               </a>
             </div>

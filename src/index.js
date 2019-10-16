@@ -9,6 +9,7 @@ import Greetings from './components/Greetings';
 import Dashboard from './components/Dashboard';
 import SignupPage from './components/signup/SignupPage';
 import Playlist from './components/video/Playlist';
+import VideoPage from './components/video/VideoPage';
 import LoginPage from './components/login/LoginPage';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'
@@ -45,6 +46,7 @@ render((
         <Route path="/profile" component={requireAuth(Profile)} />
         <Route path="/dashboard" component={requireAuth(Dashboard)} />
         <Route path="/playlist" component={requireAuth(Playlist)} />
+        <Route path="/video" component={requireAuth(VideoPage)} />
         
       </div>
     </Router>
