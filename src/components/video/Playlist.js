@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchPlaylist } from '../../actions/playlistActions'
+import React, { Component } from 'react';
 import axios from "axios";
 
 class Playlist extends Component {
@@ -54,9 +52,9 @@ class Playlist extends Component {
         </tr>
         ))
         return (
-            <div className="page-header">
+            <div className=" playlist col-md-12 mb-100">
                 <div className="profile-page">
-            <div className="playlist center-horizontally pt-5" >
+            <div className=" center-horizontally pt-5" >
             <div className="col-md-9 col-sm-12">
                 <div className="playlist-info row">
                     <div className="track-art col-md-4 center-horizontally">
@@ -82,7 +80,7 @@ class Playlist extends Component {
                 </div>
             </div>
             <div className="white-line mt-5 mb-5"></div>
-                <div className="playlist">
+                <div className="playlist-table">
                 <table className="table playlist-table">
                     <thead>
                         <tr className="text-center">
@@ -116,10 +114,5 @@ class Playlist extends Component {
     }
 }
 
-// function mapStateToProps(state) {
-//     return {
-//         playlist: state.playlists.playlist
-//     }
-//   }
 
-export default connect(null, { fetchPlaylist})(Playlist)
+export default Playlist
