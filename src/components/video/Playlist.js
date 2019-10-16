@@ -4,11 +4,7 @@ import { fetchPlaylist } from '../../actions/playlistActions'
 import axios from "axios";
 
 class Playlist extends Component {
-    // componentWillMount(){
-    //     this.props.fetchPlaylist();
-    //     console.log('hey')
-        
-    // }
+
     constructor(props){
         super(props)
         this.state = {
@@ -37,7 +33,8 @@ class Playlist extends Component {
                 <img src={video.thumbnails.default.url} alt="Rounded image" className="img-fluid rounded shadow playlist-thumbnail" />
             </td>
             <td><p>{video.title}</p></td>
-            <td><p>234K</p></td>
+            <td><p>{video.view_count > 1000 && video.view_count < 1000000? `${Math.round(video.view_count/1000)}K` : `${Math.round(video.view_count/1000000)}M`}</p></td>
+            <td><p>4:40 min</p></td>
             <td><p>4:40 min</p></td>
         </tr>
         ))
@@ -50,7 +47,7 @@ class Playlist extends Component {
                     </div>
                 <div className="track-info col-md-8">
                     <div className="track-title text-white">
-                        <h1 className="mb-0"> {this.state.playlist.name}</h1>
+                        <h1 className="mb-0 playlist-title"> {this.state.playlist.name}</h1>
                         <hr class="line-success"></hr>
                     </div>
                     <div className="track-creator text-white pt-3">
@@ -73,7 +70,7 @@ class Playlist extends Component {
                     <thead>
                         <tr className="text-center">
                         <th scope="col"></th>
-                        <th scope="col">Creator</th>
+                        <th scope="col">Title</th>
                         <th scope="col">Views</th>
                         <th scope="col">Likes</th>
                         <th scope="col">Length</th>

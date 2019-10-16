@@ -20935,3 +20935,8 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   background: #1f2251;
   color: hsla(0,0%,100%,.8);
 }
+
+
+.playlist-title {
+  text-transform: uppercase;
+}
