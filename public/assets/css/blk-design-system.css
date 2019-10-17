@@ -20902,7 +20902,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 
 .playlist .playlist-table tbody tr:hover td p {
   color: rgba(255,255,255,1);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* .playlist .playlist-table tbody tr:hover td {
