@@ -20961,3 +20961,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .mt-200 {
   margin-bottom: 200px !important;
 }
+
+.ytp-endscreen-paginate.ytp-show-tiles {
+  display: none !important;
+}
