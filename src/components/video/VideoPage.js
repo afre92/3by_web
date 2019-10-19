@@ -13,8 +13,8 @@ export default class VideoPage extends Component {
 
               </div>
               <div className="video-reactions display-inline center-horizontally section">
-                  <img src="assets/img/angry.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji" />
-                  <img src="assets/img/in-love.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji" />
+                  <img src="assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
+                  <img src="assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
                 </div>
           </div>
         </div>

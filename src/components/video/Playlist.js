@@ -27,9 +27,9 @@ class Playlist extends Component {
         const totalReactions = likes + dislikes
         const percentage = Math.round(likes/totalReactions * 100)
         return (
-        <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={percentage} aria-valuemin="0" aria-valuemax="100" style={{width: `${percentage}%`}}>
-                <span class="progress-value">{percentage}%</span>    
+        <div className="progress">
+            <div className="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={percentage} aria-valuemin="0" aria-valuemax="100" style={{width: `${percentage}%`}}>
+                <span className="progress-value">{percentage}%</span>    
             </div>
         </div>
         )
@@ -58,12 +58,12 @@ class Playlist extends Component {
             <div className="col-md-9 col-sm-12">
                 <div className="playlist-info row">
                     <div className="track-art col-md-4 center-horizontally">
-                        <img src="assets/img/ryan.jpg" alt="Rounded image" class="img-fluid rounded shadow art" />
+                        <img src="/assets/img/ryan.jpg" alt="Rounded image" className="img-fluid rounded shadow art" />
                     </div>
                 <div className="track-info col-md-8">
                     <div className="track-title text-white">
                         <h1 className="mb-0 playlist-title"> {this.state.playlist.name}</h1>
-                        <hr class="line-primary"></hr>
+                        <hr className="line-primary"></hr>
                     </div>
                     <div className="track-creator text-white pt-3">
                         <h6 className="display-inline "> 

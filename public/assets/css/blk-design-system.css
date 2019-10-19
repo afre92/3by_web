@@ -20970,3 +20970,11 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   width: 60px;
   margin: 0px 15px;
 }
+
+.reaction-emoji.angry:hover {
+  content: url('../img/angry.png')
+}
+
+.reaction-emoji.in-love:hover {
+  content: url('../img/in-love.png')
+}
