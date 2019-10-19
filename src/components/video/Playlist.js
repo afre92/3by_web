@@ -43,7 +43,7 @@ class Playlist extends Component {
                 <img src={video.thumbnails.default.url} alt="Rounded" className="img-fluid rounded shadow playlist-thumbnail" />
             </td>
             <td className="video-title"><p>{video.title}</p></td>
-            <td><p>{video.view_count > 1000 && video.view_count < 1000000? `${Math.round(video.view_count/1000)}K` : `${Math.round(video.view_count/1000000)}M`}</p></td>
+            <td><p>{video.view_count > 1000 && video.view_count < 1000000? `${Math.round(video.view_count/1000)}K` : `${(video.view_count/1000000).toFixed(2)}M`}</p></td>
             <td>
 
                 {this.videoRatingBar(video.like_count, video.dislike_count)}
