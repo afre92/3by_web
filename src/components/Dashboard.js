@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Dashboard extends Component {
 
-  constructor(props) {
-    super(props);
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick(e) {
-    const playlist = e.target.dataset.playlist
-    this.props.history.push(`/playlist/${playlist}`);
-  }
 
   render() {
     return (
@@ -30,7 +22,8 @@ export default class Dashboard extends Component {
         </div>
 
           <div className="row center-horizontally pt-4">
-              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
+              <Link to={`/playlist/chilling`} >
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers" data-playlist="chilling">
@@ -39,8 +32,9 @@ export default class Dashboard extends Component {
                       </div>
                   </div>
                 </div>
+                </Link>
               </div>
-              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick} >
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" >
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">
@@ -50,7 +44,7 @@ export default class Dashboard extends Component {
                   </div>
                 </div>
               </div>
-              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">
@@ -61,7 +55,7 @@ export default class Dashboard extends Component {
                 </div>
               </div>
 
-              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">
@@ -71,7 +65,7 @@ export default class Dashboard extends Component {
                   </div>
                 </div>
               </div>
-              <div className="card  bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+              <div className="card  bg-light-white bordered-card col-md-3 col-sm-5">
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">
@@ -81,7 +75,7 @@ export default class Dashboard extends Component {
                   </div>
                 </div>
               </div>
-              <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
+              <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">

@@ -57,7 +57,7 @@ export default class SignupForm extends Component {
           text: 'you signed up successfully. Welcome!'
 
         });
-        this.props.history.push('/');
+        this.props.history.push('/playlists');
       },
       ({ data }) => this.setState({ erros: data, isLoading: false})
     )

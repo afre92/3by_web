@@ -30,7 +30,7 @@ class LoginForm extends Component {
     e.preventDefault();
     this.setState({ errors: {}, isLoading: true});
     this.props.login(this.state).then(
-      (res) => this.props.history.push('/dashboard'),
+      (res) => this.props.history.push('/playlists'),
       (err) => this.setState({ errors: err['response']['data'], isLoading: false})
     )
   }

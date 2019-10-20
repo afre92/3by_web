@@ -16,7 +16,7 @@ class Playlist extends Component {
         this.videoRatingBar = this.videoRatingBar.bind(this)
     }
 
-    componentWillMount(){
+    componentDidMount(){
         const { name } = this.props.match.params
         axios.get(`http://localhost:3001/playlist/${name}`)
         .then(res => res)
