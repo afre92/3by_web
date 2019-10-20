@@ -17,7 +17,8 @@ class Playlist extends Component {
     }
 
     componentWillMount(){
-        axios.get('http://localhost:3001/playlist/chilling')
+        const { name } = this.props.match.params
+        axios.get(`http://localhost:3001/playlist/${name}`)
         .then(res => res)
         .then(playlist => this.setState({playlist: playlist.data})
       )

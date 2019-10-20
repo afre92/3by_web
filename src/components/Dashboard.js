@@ -7,8 +7,9 @@ export default class Dashboard extends Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
-    this.props.history.push('/playlist');
+  onClick(e) {
+    const playlist = e.target.dataset.playlist
+    this.props.history.push(`/playlist/${playlist}`);
   }
 
   render() {
@@ -32,9 +33,9 @@ export default class Dashboard extends Component {
               <div className="card bg-light-white bordered-card col-md-3 col-sm-5" onClick={this.onClick}>
                 <div className="card-body text-center">
                   <div className="justify-content-center">
-                    <div className="numbers">
+                    <div className="numbers" data-playlist="chilling">
                       <i className="fa fa-award"></i>
-                        <p className="card-category text-white mt-4">DAILY 3</p>
+                        <p className="card-category text-white mt-4">CHILLING</p>
                       </div>
                   </div>
                 </div>
