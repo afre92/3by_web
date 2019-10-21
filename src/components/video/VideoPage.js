@@ -31,18 +31,6 @@ export default class VideoPage extends Component {
     this.fetchData(videoId)
   }
 
-
-
-  onClickArrow(param, e) {
-    // debugger
-    this.props.history.push({
-      pathname: `/video/${param}`
-    })
-    // this.setState({key: param})
-  }
-
-
-
   renderVideo() {
     const { video, next, prev} = this.state
     return (
@@ -60,17 +48,17 @@ export default class VideoPage extends Component {
               </div>
               <div className="display-inline video-controls">
                 <div className="ml-5">
-                  <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
+                  <Link to={`/video/${prev}`}>
+                    <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
+                  </Link>
                 </div>
                 <div className="video-reactions">
                     <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
                     <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
                 </div>
-                
-                 {/* onClick={this.onClickArrow.bind(this, next)} */}
                 <div className="mr-5">
                   <Link to={`/video/${next}`}>
-                  <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
+                    <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
                   </Link>
                 </div>
               </div>
