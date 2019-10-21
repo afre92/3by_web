@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import isEmpty from 'lodash/isEmpty'
+import { Link } from 'react-router-dom'
 
 export default class VideoPage extends Component {
   constructor(props){
@@ -10,19 +11,42 @@ export default class VideoPage extends Component {
       next: '',
       prev: ''
     }
+    this.fetchData = this.fetchData.bind(this)
+  }
 
-    const videoId = this.props.match.params.id
-
+  fetchData(videoId){
       axios.get(`http://localhost:3001/video/${videoId}`)
         .then(res => res)
         .then(res => this.setState({video: res.data.video, next: res.data.next, prev: res.data.previous})
       )
   }
 
+  componentDidMount() {
+      const videoId = this.props.match.params.id
+      this.fetchData(videoId)
+  }
+
+  componentWillReceiveProps(new_props) {
+    const videoId = new_props.match.params.id
+    this.fetchData(videoId)
+  }
+
+
+
+  onClickArrow(param, e) {
+    // debugger
+    this.props.history.push({
+      pathname: `/video/${param}`
+    })
+    // this.setState({key: param})
+  }
+
+
+
   renderVideo() {
-    const { video, next, prev } = this.state
+    const { video, next, prev} = this.state
     return (
-      <div class="section profile-page">
+      <div class="profile-page">
         <div class="wrapper mb-5 container">
           <div class="page-header">
             <h3 className="text-center">{video.title}
@@ -34,10 +58,22 @@ export default class VideoPage extends Component {
                 <iframe width="1008" height="567" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
               </div>
-              <div className="video-reactions display-inline center-horizontally ">
-                  <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
-                  <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
+              <div className="display-inline video-controls">
+                <div className="ml-5">
+                  <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
                 </div>
+                <div className="video-reactions">
+                    <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
+                    <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
+                </div>
+                
+                 {/* onClick={this.onClickArrow.bind(this, next)} */}
+                <div className="mr-5">
+                  <Link to={`/video/${next}`}>
+                  <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
+                  </Link>
+                </div>
+              </div>
           </div>
         </div>
       </div>

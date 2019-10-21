@@ -20978,3 +20978,16 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .reaction-emoji.in-love:hover {
   content: url('../img/in-love.png')
 }
+
+.control-arrow {
+  height: 60px;
+}
+
+.video-reactions{
+  align-self: center;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: space-between;
+}
