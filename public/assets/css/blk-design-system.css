@@ -20991,3 +20991,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   display: flex;
   justify-content: space-between;
 }
+
+.centered-line {
+  margin-left: auto !important;
+}

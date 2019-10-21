@@ -34,16 +34,19 @@ export default class VideoPage extends Component {
   renderVideo() {
     const { video, next, prev} = this.state
     return (
-      <div class="profile-page">
-        <div class="wrapper mb-5 container">
-          <div class="page-header">
-            <h3 className="text-center">{video.title}
-            <hr className="line-primary"></hr>
+      <div className="col-md-12 mb-100">
+      <div className="profile-page">
+        <div className="wrapper container">
+          <div className=" ">
+            <h3 className="text-center ">{video.title}
+            <div className="center-horizontally">
+              <hr className="line-primary centered-line"></hr>
+            </div>
             </h3>
             
-              <div className="video-page center-horizontally section">
+              <div className="video-page center-horizontally mb-5">
                 
-                <iframe width="1008" height="567" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="907" height="510" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
               </div>
               <div className="display-inline video-controls">
@@ -64,6 +67,7 @@ export default class VideoPage extends Component {
               </div>
           </div>
         </div>
+      </div>
       </div>
     )
   }
