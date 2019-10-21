@@ -9,21 +9,23 @@ export default class VideoPage extends Component {
     this.state = {
       video: [],
       next: '',
-      prev: ''
+      prev: '',
+      liked: false,
+      disliked: false
     }
     this.fetchData = this.fetchData.bind(this)
   }
 
   fetchData(videoId){
-      axios.get(`http://localhost:3001/video/${videoId}`)
-        .then(res => res)
-        .then(res => this.setState({video: res.data.video, next: res.data.next, prev: res.data.previous})
-      )
+    axios.get(`http://localhost:3001/video/${videoId}`)
+      .then(res => res)
+      .then(res => this.setState({video: res.data.video, next: res.data.next, prev: res.data.previous})
+    )
   }
 
   componentDidMount() {
-      const videoId = this.props.match.params.id
-      this.fetchData(videoId)
+    const videoId = this.props.match.params.id
+    this.fetchData(videoId)
   }
 
   componentWillReceiveProps(new_props) {
@@ -31,8 +33,15 @@ export default class VideoPage extends Component {
     this.fetchData(videoId)
   }
 
+  onClickReactions(reaction, videoId , e){
+    // need like or dislike and video id
+    debugger
+  }
+
   renderVideo() {
-    const { video, next, prev} = this.state
+    const { video, next, prev, liked, disliked} = this.state
+    const angryEmojiUrl = disliked ? "/assets/img/angry.png" : "/assets/img/angry-grey.png"
+    const inLoveEmojiUrl = liked ? "/assets/img/in-love.png" : "/assets/img/in-love-grey.png"
     return (
       <div className="col-md-12 mb-100">
         <div className="profile-page">
@@ -53,8 +62,8 @@ export default class VideoPage extends Component {
                   </Link>
                 </div>
                 <div className="video-reactions">
-                  <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
-                  <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
+                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions.bind(this, 'dislike', video.id)}/>
+                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions.bind(this, 'like', video.id)} />
                 </div>
                 <div className="mr-5">
                   <Link to={`/video/${next}`}>
