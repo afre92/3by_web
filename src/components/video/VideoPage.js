@@ -35,19 +35,16 @@ export default class VideoPage extends Component {
     const { video, next, prev} = this.state
     return (
       <div className="col-md-12 mb-100">
-      <div className="profile-page">
-        <div className="wrapper container">
-          <div className=" ">
-            <h3 className="text-center ">{video.title}
-            <div className="center-horizontally">
-              <hr className="line-primary centered-line"></hr>
-            </div>
-            </h3>
-            
-              <div className="video-page center-horizontally mb-5">
-                
+        <div className="profile-page">
+          <div className="wrapper container">
+            <div>
+              <h3 className="text-center ">{video.title}
+                <div className="center-horizontally">
+                  <hr className="line-primary centered-line"></hr>
+                </div>
+              </h3>
+              <div className="video-page center-horizontally mb-5">                
                 <iframe width="907" height="510" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
               </div>
               <div className="display-inline video-controls">
                 <div className="ml-5">
@@ -56,8 +53,8 @@ export default class VideoPage extends Component {
                   </Link>
                 </div>
                 <div className="video-reactions">
-                    <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
-                    <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
+                  <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
+                  <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
                 </div>
                 <div className="mr-5">
                   <Link to={`/video/${next}`}>
@@ -65,9 +62,9 @@ export default class VideoPage extends Component {
                   </Link>
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     )
   }
