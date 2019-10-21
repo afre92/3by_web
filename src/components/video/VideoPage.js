@@ -20,18 +20,21 @@ export default class VideoPage extends Component {
   }
 
   renderVideo() {
-        return (
-      
+    const { video, next, prev } = this.state
+    return (
       <div class="section profile-page">
         <div class="wrapper mb-5 container">
           <div class="page-header">
-            <h3 className="text-center">helloet ehre</h3>
-              <div className="video-page center-horizontally">
+            <h3 className="text-center">{video.title}
+            <hr className="line-primary"></hr>
+            </h3>
+            
+              <div className="video-page center-horizontally section">
                 
-                <iframe width="1008" height="567" id="ifrm" src="https://www.youtube.com/embed/Ghywp7i032A?rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1008" height="567" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
               </div>
-              <div className="video-reactions display-inline center-horizontally section">
+              <div className="video-reactions display-inline center-horizontally ">
                   <img src="/assets/img/angry-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" />
                   <img src="/assets/img/in-love-grey.png" alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" />
                 </div>
