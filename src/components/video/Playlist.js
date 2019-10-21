@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom'
 
 class Playlist extends Component {
 
@@ -24,6 +25,10 @@ class Playlist extends Component {
       )
     }
 
+    onClick(param, e){
+        this.props.history.push(`/video/${param}`)
+    }
+
     videoRatingBar(likes, dislikes){
         const totalReactions = likes + dislikes
         const percentage = Math.round(likes/totalReactions * 100)
@@ -39,18 +44,19 @@ class Playlist extends Component {
 
     renderPlaylist(){
         const videosList = this.state.playlist.videos[0].map(video => (
-            <tr className="text-center" key={video.id}>
+
+        <tr className="text-center" key={video.id} onClick={this.onClick.bind(this, video.id)}>
             <td scope="row" className="center-horizontally">
                 <img src={video.thumbnails.default.url} alt="Rounded" className="img-fluid rounded shadow playlist-thumbnail" />
             </td>
             <td className="video-title"><p>{video.title}</p></td>
             <td><p>{video.view_count > 1000 && video.view_count < 1000000? `${Math.round(video.view_count/1000)}K` : `${(video.view_count/1000000).toFixed(2)}M`}</p></td>
             <td>
-
                 {this.videoRatingBar(video.like_count, video.dislike_count)}
             </td>
-            <td><p>{video.length.substring(video.length.indexOf(":") + 1)}</p></td>
+            <td><p>{video.length.substring(video.length.indexOf(":") + 1)}</p></td> 
         </tr>
+        
         ))
         return (
             <div className=" playlist col-md-12 section mb-100">

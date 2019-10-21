@@ -46,7 +46,7 @@ render((
         <Route path="/profile" component={requireAuth(Profile)} />
         <Route path="/playlists" component={requireAuth(Dashboard)} />
         <Route path="/playlist/:name" component={requireAuth(Playlist)} />
-        <Route path="/video" component={requireAuth(VideoPage)} />
+        <Route path="/video/:id" component={requireAuth(VideoPage)} />
         
       </div>
     </Router>
