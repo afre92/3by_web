@@ -20980,7 +20980,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 }
 
 .control-arrow {
-  height: 60px;
+  height: 90px;
 }
 
 .video-reactions{
@@ -20989,7 +20989,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 
 .video-controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .centered-line {

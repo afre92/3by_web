@@ -45,31 +45,36 @@ export default class VideoPage extends Component {
     return (
       <div className="col-md-12 mb-100">
         <div className="profile-page">
-          <div className="wrapper container">
+          <div className="wrapper section">
             <div>
               <h3 className="text-center ">{video.title}
                 <div className="center-horizontally">
-                  <hr className="line-primary centered-line"></hr>
+                  <hr className="line-primary centered-line mb-0"></hr>
                 </div>
               </h3>
-              <div className="video-page center-horizontally mb-5">                
-                <iframe width="907" height="510" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div className="display-inline video-controls">
-                <div className="ml-5">
+              <div className="video-page center-horizontally mb-5 mt-5">
+                <div className="mr-5 video-reactions">
                   <Link to={`/video/${prev}`}>
                     <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
                   </Link>
-                </div>
-                <div className="video-reactions">
-                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions.bind(this, 'dislike', video.id)}/>
-                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions.bind(this, 'like', video.id)} />
-                </div>
-                <div className="mr-5">
+                </div>                
+                <iframe width="907" height="510" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div className="ml-5 video-reactions">
                   <Link to={`/video/${next}`}>
                     <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
                   </Link>
                 </div>
+              </div>
+              <div className="display-inline video-controls">
+
+                <div className="video-reactions">
+                  <div className="text-center">
+                    <h4>REACT:</h4>
+                  </div>
+                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions.bind(this, 'dislike', video.id)}/>
+                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions.bind(this, 'like', video.id)} />
+                </div>
+
               </div>
             </div>
           </div>
