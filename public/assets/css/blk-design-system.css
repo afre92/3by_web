@@ -20995,3 +20995,8 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .centered-line {
   margin-left: auto !important;
 }
+
+
+.c {
+  height: '100vh' !important;
+}

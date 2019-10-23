@@ -20,7 +20,13 @@ export default class VideoPage extends Component {
   fetchData(videoId){
     axios.get(`http://localhost:3001/video/${videoId}`)
       .then(res => res)
-      .then(res => this.setState({video: res.data.video, next: res.data.next, prev: res.data.previous})
+      .then(res => this.setState({
+        video: res.data.video, 
+        next: res.data.next, 
+        prev: res.data.previous, 
+        liked: res.data.liked,
+        disliked: res.data.disliked
+      })
     )
   }
 
@@ -36,11 +42,11 @@ export default class VideoPage extends Component {
 
   onClickReactions(e){
     const videoId = e.target.getAttribute('data-video-id')
-    const action = e.target.getAttribute('data-action')
+    const reaction = e.target.getAttribute('data-reaction')
 
-    axios.post(`http://localhost:3001/video/${videoId}/reaction`, {reaction: action})
+    axios.post(`http://localhost:3001/video/${videoId}/reaction`, {reaction: reaction})
       .then(res => res)
-      .then(res => this.setState({video: res.data.video, next: res.data.next, prev: res.data.previous})
+      .then(res => this.setState({liked: res.data.liked, disliked: res.data.disliked})
     )
   }
 
@@ -77,8 +83,8 @@ export default class VideoPage extends Component {
                   <div className="text-center">
                     <h4>REACT:</h4>
                   </div>
-                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions} data-video-id={video.id} data-action="dislike"/>
-                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions} data-video-id={video.id} data-action="like"/>
+                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="dislike"/>
+                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="like"/>
                 </div>
 
               </div>
@@ -92,7 +98,7 @@ export default class VideoPage extends Component {
   render() {
       const { video } = this.state
       return !isEmpty(video) ? this.renderVideo() : (
-        <span>Loading wells...</span>
+        <div style={{height: '100vh'}}></div>
       )
   }
 }

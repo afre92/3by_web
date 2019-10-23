@@ -114,7 +114,7 @@ class Playlist extends Component {
         const { videos } = this.state.playlist
 
             return videos.length ? this.renderPlaylist() : (
-              <span>Loading wells...</span>
+              <div style={{height: '100vh'}}></div>
             )
 
     }
