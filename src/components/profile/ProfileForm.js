@@ -6,13 +6,17 @@ export default class ProfileForm extends Component {
 
     constructor(props){
     super(props)
+
+    const token = localStorage.getItem('jwtToken');
+    const decodedToken = jwt_decode(token)
+
     this.state = {
-      username: '',
-      email: '',
+      username: decodedToken.username,
+      email: decodedToken.email,
       new_password: '',
       old_password: '',
       errors: {},
-      isLoading: false,
+      isLoading: true,
       invalid: false
     }
 
@@ -20,23 +24,27 @@ export default class ProfileForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.checkUserExists = this.checkUserExists.bind(this);
     this.renderProfileForm = this.renderProfileForm.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
 
-    const token = localStorage.getItem('jwtToken');
-    const decodedToken = jwt_decode(token)
-
-    // axios.get(`http://localhost:3001/user/${decodedToken.user_id}`)
-    //   .then(res => res)
-    //   .then(data => this.setState({username: data.username, email: data.email})
-    // )
-    // debugger
   }
-
-
 
   onChange(e){
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  onChangePassword(e){
+
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+
+    if(e.target.value.length > 5 ) {
+      this.setState({isLoading: false})
+    } else {
+      this.setState({isLoading: true})
+    }
   }
 
   checkUserExists(e){
@@ -80,10 +88,23 @@ export default class ProfileForm extends Component {
       <div>
         <div class="card card-plain">
           <div class="card-header">
-            <h1 class="text-left">Profile</h1>
+            <h1 class="text-left">User Profile
+              <hr className="line-primary"></hr>
+            </h1>
+            
           </div>
           <div class="card-body"> 
             <form onSubmit={this.onSubmit}>
+              <div className="py-2">
+                <TextFieldGroup
+                  // error={errors.email}
+                  placeholder=""
+                  icon="icon-email-85"
+                  value={this.state.email}
+                  field="email"
+                  disabled={true}
+                />
+              </div>
               <div className="py-2">
                 <TextFieldGroup
                   // error={errors.username}
@@ -97,17 +118,6 @@ export default class ProfileForm extends Component {
               </div>
               <div className="py-2">
                 <TextFieldGroup
-                  // error={errors.email}
-                  placeholder=""
-                  icon="icon-email-85"
-                  checkUserExists={this.checkUserExists}
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  field="email"
-                />
-              </div>
-              <div className="py-2">
-                <TextFieldGroup
                   // error={errors.password}
                   placeholder="New Password"
                   icon="icon-lock-circle"
@@ -117,19 +127,21 @@ export default class ProfileForm extends Component {
                   type="password"
                 />
               </div>
-              <div className="py-2">
+              <div className="pb-2">
+                <div className="text-primary mb-3">* Password required for any change</div>
                 <TextFieldGroup
                   // error={errors.password_confirmation}
                   placeholder="Current Password"
                   icon="icon-lock-circle"
-                  onChange={this.onChange}
+                  onChange={this.onChangePassword}
                   value={this.state.old_password}
                   field="old_password"
                   type="password"
+                  required={true}
                 />
               </div>
-              <div className="pt-5">
-               <button type="submit" class="btn btn-primary btn-round float-left" rel="tooltip" data-placement="right">Submit</button>
+              <div className="pt-3">
+               <button type="submit" class="btn btn-primary btn-round float-left" rel="tooltip" data-placement="right" disabled={this.state.isLoading} >Submit</button>
               </div>
             </form>
           </div>

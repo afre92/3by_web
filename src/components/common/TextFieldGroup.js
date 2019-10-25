@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-export default function TextFieldGroup({ field, value, error, placeholder, type, onChange, checkUserExists, icon}) {
+export default function TextFieldGroup({ field, value, error, placeholder, type, onChange, checkUserExists, icon , required, disabled}) {
     return (
         <div className={classnames('input-group input-group-alternative', { 'has-danger': error })}>
           <div className="input-group-prepend">
@@ -18,6 +18,8 @@ export default function TextFieldGroup({ field, value, error, placeholder, type,
             name={field}
             value={value}
             className="form-control"
+            required={required}
+            disabled={disabled}
           />
           <div className="w-100">
           {error && <span className='help-block'>{error}</span>}
@@ -39,5 +41,7 @@ TextFieldGroup.propTypes = {
 
 TextFieldGroup.defaultProps = {
     type: 'text',
-    placeholder: ''
+    placeholder: '',
+    required: false,
+    disabled: false
 }
