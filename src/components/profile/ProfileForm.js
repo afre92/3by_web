@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
+import jwt_decode from 'jwt-decode';
 
 export default class ProfileForm extends Component {
 
@@ -8,8 +9,8 @@ export default class ProfileForm extends Component {
     this.state = {
       username: '',
       email: '',
-      password: '',
-      password_confirmation: '',
+      new_password: '',
+      old_password: '',
       errors: {},
       isLoading: false,
       invalid: false
@@ -18,7 +19,19 @@ export default class ProfileForm extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.checkUserExists = this.checkUserExists.bind(this);
+    this.renderProfileForm = this.renderProfileForm.bind(this);
+
+    const token = localStorage.getItem('jwtToken');
+    const decodedToken = jwt_decode(token)
+
+    // axios.get(`http://localhost:3001/user/${decodedToken.user_id}`)
+    //   .then(res => res)
+    //   .then(data => this.setState({username: data.username, email: data.email})
+    // )
+    // debugger
   }
+
+
 
   onChange(e){
     this.setState({
@@ -62,7 +75,7 @@ export default class ProfileForm extends Component {
     // )
   }
 
-  render() {
+  renderProfileForm() {
     return (
       <div>
         <div class="card card-plain">
@@ -96,27 +109,27 @@ export default class ProfileForm extends Component {
               <div className="py-2">
                 <TextFieldGroup
                   // error={errors.password}
-                  placeholder="Password"
+                  placeholder="New Password"
                   icon="icon-lock-circle"
                   onChange={this.onChange}
-                  value={this.state.password}
-                  field="password"
+                  value={this.state.new_password}
+                  field="new_password"
                   type="password"
                 />
               </div>
               <div className="py-2">
                 <TextFieldGroup
                   // error={errors.password_confirmation}
-                  placeholder="Password confirmation"
+                  placeholder="Current Password"
                   icon="icon-lock-circle"
                   onChange={this.onChange}
-                  value={this.state.password_confirmation}
-                  field="password_confirmation"
+                  value={this.state.old_password}
+                  field="old_password"
                   type="password"
                 />
               </div>
               <div className="pt-5">
-               <button type="submit" class="btn btn-primary btn-round float-left" rel="tooltip" data-original-title="Can't wait for your message" data-placement="right">Submit</button>
+               <button type="submit" class="btn btn-primary btn-round float-left" rel="tooltip" data-placement="right">Submit</button>
               </div>
             </form>
           </div>
@@ -124,4 +137,14 @@ export default class ProfileForm extends Component {
       </div>
     )
   }
+
+  render() {
+
+    const { username } = this.state
+
+        return username.length ? this.renderProfileForm() : (
+          <div style={{height: '100vh'}}></div>
+        )
+
+}
 }
