@@ -19,7 +19,7 @@ import setAuthorizationToken from './utils/setAuthorizationToken'
 import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
-import Profile from './components/Profile';
+import Profile from './components/profile/ProfilePage';
 
 
 const store = createStore(
