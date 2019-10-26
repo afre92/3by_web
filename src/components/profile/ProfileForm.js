@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
 import jwt_decode from 'jwt-decode';
+import isEmpty from 'lodash/isEmpty';
 
 export default class ProfileForm extends Component {
 
@@ -14,7 +15,7 @@ export default class ProfileForm extends Component {
       username: decodedToken.username,
       email: decodedToken.email,
       new_password: '',
-      old_password: '',
+      current_password: '',
       errors: {},
       isLoading: true,
       invalid: false
@@ -24,7 +25,7 @@ export default class ProfileForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.checkUserExists = this.checkUserExists.bind(this);
     this.renderProfileForm = this.renderProfileForm.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onBlurPassword = this.onBlurPassword.bind(this);
 
   }
 
@@ -34,23 +35,21 @@ export default class ProfileForm extends Component {
     })
   }
 
-  onChangePassword(e){
-
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-
+  onBlurPassword(e){
     if(e.target.value.length > 5 ) {
-      this.setState({isLoading: false})
+      const errors = { ...this.state.errors }
+      delete errors[e.target.name]
+      const isLoading  = isEmpty(errors) ? false : true
+      this.setState({isLoading, errors})
     } else {
-      this.setState({isLoading: true})
+      this.setState({isLoading: true , errors: { ...this.state.errors ,[e.target.name]: "Password must be at least 6 characters long"}})
     }
   }
 
   checkUserExists(e){
     const field = e.target.name;
     const val = e.target.value;
-    if (val.length >= 3) {
+    if (val.length >= 3 && this.state.username !== val) {
       this.props.userExists(val).then(res => {
         let errors = this.state.errors;
         let invalid;
@@ -84,7 +83,9 @@ export default class ProfileForm extends Component {
   }
 
   renderProfileForm() {
+    const { errors } = this.state
     return (
+      
       <div>
         <div class="card card-plain">
           <div class="card-header">
@@ -110,7 +111,7 @@ export default class ProfileForm extends Component {
                   // error={errors.username}
                   placeholder="Username"
                   icon="icon-single-02"
-                  checkUserExists={this.checkUserExists}
+                  onBlur={this.checkUserExists}
                   onChange={this.onChange}
                   value={this.state.username}
                   field="username"
@@ -118,24 +119,26 @@ export default class ProfileForm extends Component {
               </div>
               <div className="py-2">
                 <TextFieldGroup
-                  // error={errors.password}
+                  error={errors.new_password}
                   placeholder="New Password"
                   icon="icon-lock-circle"
                   onChange={this.onChange}
+                  onBlur={this.onBlurPassword}
                   value={this.state.new_password}
                   field="new_password"
                   type="password"
                 />
               </div>
               <div className="pb-2">
-                <div className="text-primary mb-3">* Password required for any change</div>
+                <div className="text-primary mb-3">* Password required for all changes</div>
                 <TextFieldGroup
-                  // error={errors.password_confirmation}
+                  error={errors.current_password}
                   placeholder="Current Password"
                   icon="icon-lock-circle"
-                  onChange={this.onChangePassword}
-                  value={this.state.old_password}
-                  field="old_password"
+                  onChange={this.onChange}
+                  onBlur={this.onBlurPassword}
+                  value={this.state.current_password}
+                  field="current_password"
                   type="password"
                   required={true}
                 />

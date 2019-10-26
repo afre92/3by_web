@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-export default function TextFieldGroup({ field, value, error, placeholder, type, onChange, checkUserExists, icon , required, disabled}) {
+export default function TextFieldGroup({ field, value, error, placeholder, type, onChange, onBlur, icon , required, disabled}) {
     return (
         <div className={classnames('input-group input-group-alternative', { 'has-danger': error })}>
           <div className="input-group-prepend">
@@ -12,7 +12,7 @@ export default function TextFieldGroup({ field, value, error, placeholder, type,
           </div>
           <input
             onChange={onChange}
-            onBlur={checkUserExists}
+            onBlur={onBlur}
             type={type}
             placeholder={placeholder}
             name={field}
