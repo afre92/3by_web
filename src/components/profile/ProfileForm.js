@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
 import jwt_decode from 'jwt-decode';
 import isEmpty from 'lodash/isEmpty';
+import axios from 'axios'
 
 export default class ProfileForm extends Component {
 
@@ -24,7 +25,6 @@ export default class ProfileForm extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.checkUserExists = this.checkUserExists.bind(this);
-    this.renderProfileForm = this.renderProfileForm.bind(this);
     this.onBlurPassword = this.onBlurPassword.bind(this);
 
   }
@@ -47,10 +47,15 @@ export default class ProfileForm extends Component {
   }
 
   checkUserExists(e){
+
     const field = e.target.name;
     const val = e.target.value;
+    debugger
     if (val.length >= 3 && this.state.username !== val) {
-      this.props.userExists(val).then(res => {
+      
+      axios.get(`http://localhost:3001/check_user/${val}`)
+      .then(res => {
+        debugger
         let errors = this.state.errors;
         let invalid;
         if (res.data) {
@@ -82,7 +87,7 @@ export default class ProfileForm extends Component {
     // )
   }
 
-  renderProfileForm() {
+  render() {
     const { errors } = this.state
     return (
       
@@ -152,14 +157,4 @@ export default class ProfileForm extends Component {
       </div>
     )
   }
-
-  render() {
-
-    const { username } = this.state
-
-        return username.length ? this.renderProfileForm() : (
-          <div style={{height: '100vh'}}></div>
-        )
-
-}
 }
