@@ -4,13 +4,13 @@ import jwt_decode from 'jwt-decode';
 import isEmpty from 'lodash/isEmpty';
 import axios from 'axios'
 
+const token = localStorage.getItem('jwtToken');
+const decodedToken = jwt_decode(token)
+
 export default class ProfileForm extends Component {
 
     constructor(props){
     super(props)
-
-    const token = localStorage.getItem('jwtToken');
-    const decodedToken = jwt_decode(token)
 
     this.state = {
       username: decodedToken.username,
@@ -26,7 +26,6 @@ export default class ProfileForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.checkUserExists = this.checkUserExists.bind(this);
     this.onBlurPassword = this.onBlurPassword.bind(this);
-
   }
 
   onChange(e){
@@ -50,26 +49,29 @@ export default class ProfileForm extends Component {
 
     const field = e.target.name;
     const val = e.target.value;
-    debugger
-    if (val.length >= 3 && this.state.username !== val) {
-      
-      axios.get(`http://localhost:3001/check_user/${val}`)
-      .then(res => {
-        debugger
-        let errors = this.state.errors;
-        let invalid;
-        if (res.data) {
-          errors[field] = 'There is user with such ' + field;
-          invalid = true;
-        } else {
-          errors[field] = '';
-          invalid = false
-        }
-        this.setState({ errors, invalid })
-      })
-    }
+    let errors = this.state.errors;
+    let invalid;
 
-  }
+    if(val.length <= 3){
+      errors[field] = "Username must be at least 4 characters long";
+      invalid = true;
+      this.setState({ errors, invalid })
+    } else{
+        axios.get(`http://localhost:3001/check_user/${val}`)
+        .then(res => {
+          // debugger
+          if (res.data && decodedToken.username !== val) {
+            debugger
+            errors[field] = 'There is user with such ' + field;
+            invalid = true;
+          } else {
+            delete errors[field];
+            invalid = false
+          }
+          this.setState({ errors, invalid })
+        }) 
+    }
+ }
 
   onSubmit(e){
     this.setState({ errors: {}, isLoading: true});
@@ -113,13 +115,14 @@ export default class ProfileForm extends Component {
               </div>
               <div className="py-2">
                 <TextFieldGroup
-                  // error={errors.username}
+                  error={errors.username}
                   placeholder="Username"
                   icon="icon-single-02"
                   onBlur={this.checkUserExists}
                   onChange={this.onChange}
                   value={this.state.username}
                   field="username"
+                  data={decodedToken.username}
                 />
               </div>
               <div className="py-2">
