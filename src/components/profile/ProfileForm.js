@@ -4,16 +4,17 @@ import jwt_decode from 'jwt-decode';
 import isEmpty from 'lodash/isEmpty';
 import axios from 'axios'
 
-if (localStorage.jwtToken) {
-  const token = localStorage.getItem('jwtToken');
-  const decodedToken = jwt_decode(token)
-}
 export default class ProfileForm extends Component {
 
     constructor(props){
     super(props)
 
+    const token = localStorage.getItem('jwtToken');
+    const decodedToken = jwt_decode(token)
+
     this.state = {
+      decodedToken: decodedToken,
+      new_username: decodedToken.username,
       username: decodedToken.username,
       email: decodedToken.email,
       new_password: '',
@@ -60,7 +61,7 @@ export default class ProfileForm extends Component {
     } else{
         axios.get(`http://localhost:3001/check_user/${val}`)
         .then(res => {
-          if (res.data && decodedToken.username !== val) {
+          if (res.data && this.state.decodedToken.username !== val) {
             errors[field] = 'There is user with such ' + field;
             invalid = true;
           } else {
@@ -75,10 +76,9 @@ export default class ProfileForm extends Component {
   onSubmit(e){
     this.setState({ errors: {}, isLoading: true});
     e.preventDefault();
-    axios.put(`http://localhost:3001/users/${decodedToken.username}`, this.state)
+    axios.put(`http://localhost:3001/users/${this.state.decodedToken.username}`, this.state)
     .then(
       () => {
-        debugger
         this.props.addFlashMessage({
           type: 'success',
           text: 'you have successfully updated your profile'
@@ -95,14 +95,14 @@ export default class ProfileForm extends Component {
     return (
       
       <div>
-        <div class="card card-plain">
-          <div class="card-header">
-            <h1 class="text-left">User Profile
+        <div className="card card-plain">
+          <div className="card-header">
+            <h1 className="text-left">User Profile
               <hr className="line-primary"></hr>
             </h1>
             
           </div>
-          <div class="card-body"> 
+          <div className="card-body"> 
             <form onSubmit={this.onSubmit}>
               <div className="py-2">
                 <TextFieldGroup
@@ -116,14 +116,14 @@ export default class ProfileForm extends Component {
               </div>
               <div className="py-2">
                 <TextFieldGroup
-                  error={errors.username}
+                  error={errors.new_username}
                   placeholder="Username"
                   icon="icon-single-02"
                   onBlur={this.checkUserExists}
                   onChange={this.onChange}
-                  value={this.state.username}
-                  field="username"
-                  data={decodedToken.username}
+                  value={this.state.new_username}
+                  field="new_username"
+                  // decodedToken.username
                 />
               </div>
               <div className="py-2">
@@ -153,7 +153,7 @@ export default class ProfileForm extends Component {
                 />
               </div>
               <div className="pt-3">
-               <button type="submit" class="btn btn-primary btn-round float-left" rel="tooltip" data-placement="right" disabled={this.state.isLoading} >Submit</button>
+               <button type="submit" className="btn btn-primary btn-round float-left" rel="tooltip" data-placement="right" disabled={this.state.isLoading} >Submit</button>
               </div>
             </form>
           </div>
