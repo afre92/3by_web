@@ -107,6 +107,7 @@ export default class ProfileForm extends Component {
               <div className="py-2">
                 <TextFieldGroup
                   // error={errors.email}
+                  onChange={this.onChange}
                   placeholder=""
                   icon="icon-email-85"
                   value={this.state.email}

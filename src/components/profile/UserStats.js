@@ -3,42 +3,42 @@ import React, { Component } from 'react'
 export default class UserStats extends Component {
   render() {
     return (
-            <div class="card card-coin card-plain">
-              <div class="card-header">
-                <img src="../assets/img/mike.jpg" class="img-center img-fluid rounded-circle"/>
-                <h4 class="title">Transactions</h4>
+            <div className="card card-coin card-plain">
+              <div className="card-header">
+                <img src="../assets/img/mike.jpg" className="img-center img-fluid rounded-circle"/>
+                <h4 className="title">Transactions</h4>
               </div>
-              <div class="card-body">
-                <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#linka">
+              <div className="card-body">
+                <ul className="nav nav-tabs nav-tabs-primary justify-content-center">
+                  <li className="nav-item">
+                    <a className="nav-link active" data-toggle="tab" href="#linka">
                       Wallet
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#linkb">
+                  <li className="nav-item">
+                    <a className="nav-link" data-toggle="tab" href="#linkb">
                       Send
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#linkc">
+                  <li className="nav-item">
+                    <a className="nav-link" data-toggle="tab" href="#linkc">
                       News
                     </a>
                   </li>
                 </ul>
-                <div class="tab-content tab-subcategories">
-                  <div class="tab-pane active" id="linka">
-                    <div class="table-responsive">
-                      <table class="table tablesorter " id="plain-table">
-                        <thead class=" text-primary">
+                <div className="tab-content tab-subcategories">
+                  <div className="tab-pane active" id="linka">
+                    <div className="table-responsive">
+                      <table className="table tablesorter " id="plain-table">
+                        <thead className=" text-primary">
                           <tr>
-                            <th class="header">
+                            <th className="header">
                               COIN
                             </th>
-                            <th class="header">
+                            <th className="header">
                               AMOUNT
                             </th>
-                            <th class="header">
+                            <th className="header">
                               VALUE
                             </th>
                           </tr>
@@ -81,32 +81,32 @@ export default class UserStats extends Component {
                       </table>
                     </div>
                   </div>
-                  <div class="tab-pane" id="linkb">
-                    <div class="row">
-                      <label class="col-sm-3 col-form-label">Pay to</label>
-                      <div class="col-sm-9">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="e.g. 1Nasd92348hU984353hfid" />
-                          <span class="form-text">Please enter a valid address.</span>
+                  <div className="tab-pane" id="linkb">
+                    <div className="row">
+                      <label className="col-sm-3 col-form-label">Pay to</label>
+                      <div className="col-sm-9">
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="e.g. 1Nasd92348hU984353hfid" />
+                          <span className="form-text">Please enter a valid address.</span>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <label class="col-sm-3 col-form-label">Amount</label>
-                      <div class="col-sm-9">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="1.587"/>
+                    <div className="row">
+                      <label className="col-sm-3 col-form-label">Amount</label>
+                      <div className="col-sm-9">
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="1.587"/>
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-simple btn-primary btn-icon btn-round float-right"><i class="tim-icons icon-send"></i></button>
+                    <button type="submit" className="btn btn-simple btn-primary btn-icon btn-round float-right"><i className="tim-icons icon-send"></i></button>
                   </div>
-                  <div class="tab-pane" id="linkc">
-                    <div class="table-responsive">
-                      <table class="table tablesorter " id="plain-table">
-                        <thead class=" text-primary">
+                  <div className="tab-pane" id="linkc">
+                    <div className="table-responsive">
+                      <table className="table tablesorter " id="plain-table">
+                        <thead className=" text-primary">
                           <tr>
-                            <th class="header">
+                            <th className="header">
                               Latest Crypto News
                             </th>
                           </tr>
