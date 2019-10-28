@@ -59,9 +59,7 @@ export default class ProfileForm extends Component {
     } else{
         axios.get(`http://localhost:3001/check_user/${val}`)
         .then(res => {
-          // debugger
           if (res.data && decodedToken.username !== val) {
-            debugger
             errors[field] = 'There is user with such ' + field;
             invalid = true;
           } else {
@@ -76,17 +74,19 @@ export default class ProfileForm extends Component {
   onSubmit(e){
     this.setState({ errors: {}, isLoading: true});
     e.preventDefault();
-    // this.props.userSignupRequest(this.state).then(
-    //   () => {
-    //     this.props.addFlashMessage({
-    //       type: 'success',
-    //       text: 'you signed up successfully. Welcome!'
+    axios.put(`http://localhost:3001/users/${decodedToken.username}`, this.state)
+    .then(
+      () => {
+        debugger
+        this.props.addFlashMessage({
+          type: 'success',
+          text: 'you have successfully updated your profile'
 
-    //     });
-    //     this.props.history.push('/playlists');
-    //   },
-    //   ({ data }) => this.setState({ erros: data, isLoading: false})
-    // )
+        })
+      this.props.logout();
+      },
+      ({ data }) => this.setState({ erros: data, isLoading: false})
+    )
   }
 
   render() {

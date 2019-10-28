@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import ProfileForm from './ProfileForm'
 import UserStats from './UserStats'
+import { addFlashMessage } from '../../actions/flashMessages'
+import { connect } from 'react-redux'
+import { logout } from '../../actions/authActions'
 
-export default class ProfilePage extends Component {
+class ProfilePage extends Component {
   render() {
+
+    const {addFlashMessage, logout } = this.props;
     return (
       <div class="profile-page">
         <div class="wrapper mb-5 container">
@@ -13,7 +18,7 @@ export default class ProfilePage extends Component {
             <div class="pt-200 align-items-center">
               <div class="row">
                 <div class="col-md-6">
-                  <ProfileForm />
+                  <ProfileForm addFlashMessage={addFlashMessage} logout={logout}/>
                 </div>
                 <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                   <UserStats />
@@ -26,3 +31,5 @@ export default class ProfilePage extends Component {
     )
   }
 }
+
+export default connect((state) => { return {} }, {addFlashMessage, logout})(ProfilePage);
