@@ -4,9 +4,10 @@ import jwt_decode from 'jwt-decode';
 import isEmpty from 'lodash/isEmpty';
 import axios from 'axios'
 
-const token = localStorage.getItem('jwtToken');
-const decodedToken = jwt_decode(token)
-
+if (localStorage.jwtToken) {
+  const token = localStorage.getItem('jwtToken');
+  const decodedToken = jwt_decode(token)
+}
 export default class ProfileForm extends Component {
 
     constructor(props){
