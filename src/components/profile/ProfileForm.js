@@ -6,17 +6,15 @@ import axios from 'axios'
 
 export default class ProfileForm extends Component {
 
-    constructor(props){
+  constructor(props){
     super(props)
-
-    const token = localStorage.getItem('jwtToken');
-    const decodedToken = jwt_decode(token)
+    
+    const user = this.props
 
     this.state = {
-      decodedToken: decodedToken,
-      new_username: decodedToken.username,
-      username: decodedToken.username,
-      email: decodedToken.email,
+      new_username: user.username,
+      username: user.username,
+      email: user.email,
       new_password: '',
       current_password: '',
       errors: {},
@@ -61,7 +59,7 @@ export default class ProfileForm extends Component {
     } else{
         axios.get(`http://localhost:3001/check_user/${val}`)
         .then(res => {
-          if (res.data && this.state.decodedToken.username !== val) {
+          if (res.data && this.props.username !== val) {
             errors[field] = 'There is user with such ' + field;
             invalid = true;
           } else {
@@ -76,7 +74,7 @@ export default class ProfileForm extends Component {
   onSubmit(e){
     this.setState({ errors: {}, isLoading: true});
     e.preventDefault();
-    axios.put(`http://localhost:3001/users/${this.state.decodedToken.username}`, this.state)
+    axios.put(`http://localhost:3001/users/${this.props.username}`, this.state)
     .then(
       () => {
         this.props.addFlashMessage({

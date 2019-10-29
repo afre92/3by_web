@@ -1,28 +1,50 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class UserStats extends Component {
-  render() {
+
+  constructor(props) {
+    super(props)
+
+
+    this.state = {
+      liked: [],
+      disliked: [],
+      isLoading: true
+    }
+
+    this.renderUserStats = this.renderUserStats.bind(this)
+    this.fetchData = this.fetchData.bind(this)
+  }
+
+  componentDidMount(){
+    this.fetchData()
+  }
+
+
+  fetchData(){
+    axios.get(`http://localhost:3001/user/${this.props.user.username}/reactions`)
+      .then((err) => err)
+      .then((res) => this.setState({liked: res.liked, disliked: res.disliked, isLoading: false}))
+      
+  }
+  renderUserStats() {
     return (
             <div className="card card-coin card-plain">
               <div className="card-header">
-                <img src="../assets/img/mike.jpg" className="img-center img-fluid rounded-circle"/>
-                <h4 className="title">Transactions</h4>
+                {/* <img src="/assets/img/mike.jpg" className="img-center img-fluid rounded-circle"/> */}
+                <h2 className="title">Reactions</h2>
               </div>
               <div className="card-body">
                 <ul className="nav nav-tabs nav-tabs-primary justify-content-center">
                   <li className="nav-item">
                     <a className="nav-link active" data-toggle="tab" href="#linka">
-                      Wallet
+                      Liked
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" data-toggle="tab" href="#linkb">
-                      Send
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" data-toggle="tab" href="#linkc">
-                      News
+                      Disliked
                     </a>
                   </li>
                 </ul>
@@ -101,39 +123,17 @@ export default class UserStats extends Component {
                     </div>
                     <button type="submit" className="btn btn-simple btn-primary btn-icon btn-round float-right"><i className="tim-icons icon-send"></i></button>
                   </div>
-                  <div className="tab-pane" id="linkc">
-                    <div className="table-responsive">
-                      <table className="table tablesorter " id="plain-table">
-                        <thead className=" text-primary">
-                          <tr>
-                            <th className="header">
-                              Latest Crypto News
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              The Daily: Nexo to Pay on Stable...
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Venezuela Begins Public of Nation...
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              PR: BitCanna – Dutch Blockchain...
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
     )
   }
+
+  render() {
+
+    const { isLoading } = this.state
+
+        return isLoading ?  ( <div style={{height: '100vh'}}></div> ) : this.renderUserStats()
+
+}
 }

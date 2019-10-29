@@ -37,6 +37,10 @@ class NavigationBar extends Component {
           <Link className="nav-link" to="/profile">Profile</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link" to="/playlists">Playlists</Link>
+        </li>
+
+        <li className="nav-item">
           <a href="#" onClick={this.logout.bind(this)} className="nav-link">Logout</a>
         </li>
       </ul>
