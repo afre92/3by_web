@@ -21000,3 +21000,11 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .c {
   height: '100vh' !important;
 }
+
+.reactions-list-thumbnail {
+  width: 60px !important;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
+}

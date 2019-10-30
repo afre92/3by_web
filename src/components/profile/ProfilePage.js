@@ -19,7 +19,7 @@ class ProfilePage extends Component {
                 <div className="col-md-6">
                   <ProfileForm addFlashMessage={addFlashMessage} logout={logout} user={auth.user}/>
                 </div>
-                <div className="col-lg-4 col-md-6 ml-auto mr-auto align-self-center">
+                <div className="col-lg-6 col-md-6 align-self-center">
                   <UserStats user={auth.user} />
                 </div>
               </div>

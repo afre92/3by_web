@@ -9,7 +9,7 @@ export default class ProfileForm extends Component {
   constructor(props){
     super(props)
     
-    const user = this.props
+    const { user } = this.props
 
     this.state = {
       new_username: user.username,
@@ -104,7 +104,6 @@ export default class ProfileForm extends Component {
             <form onSubmit={this.onSubmit}>
               <div className="py-2">
                 <TextFieldGroup
-                  // error={errors.email}
                   onChange={this.onChange}
                   placeholder=""
                   icon="icon-email-85"
@@ -122,7 +121,6 @@ export default class ProfileForm extends Component {
                   onChange={this.onChange}
                   value={this.state.new_username}
                   field="new_username"
-                  // decodedToken.username
                 />
               </div>
               <div className="py-2">
