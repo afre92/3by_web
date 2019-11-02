@@ -20,6 +20,8 @@ import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
 import Profile from './components/profile/ProfilePage';
+import { logout } from './actions/authActions'
+import axios from 'axios'
 
 
 const store = createStore(
@@ -53,6 +55,21 @@ render((
     </Router>
   </Provider>
 ), document.getElementById('root'));
+
+const UNAUTHORIZED = 401;
+// const {dispatch} = reduxStore
+axios.interceptors.response.use(
+  response => response,
+  error => {
+    const {status} = error.response;
+    debugger
+    if (status === UNAUTHORIZED) {
+      logout()
+    }
+   return Promise.reject(error);
+ }
+);
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
