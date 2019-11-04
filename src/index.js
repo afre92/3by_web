@@ -20,8 +20,7 @@ import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
 import Profile from './components/profile/ProfilePage';
-import { logout } from './actions/authActions'
-import axios from 'axios'
+import NetworkService from './network-service'
 
 
 const store = createStore(
@@ -31,6 +30,8 @@ const store = createStore(
     window.devToolsExtension ? window.devToolsExtension(): f => f
   )
 )
+
+// NetworkService.setupInterceptors(store);
 
 if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);
@@ -55,21 +56,6 @@ render((
     </Router>
   </Provider>
 ), document.getElementById('root'));
-
-const UNAUTHORIZED = 401;
-// const {dispatch} = reduxStore
-axios.interceptors.response.use(
-  response => response,
-  error => {
-    const {status} = error.response;
-    debugger
-    if (status === UNAUTHORIZED) {
-      logout()
-    }
-   return Promise.reject(error);
- }
-);
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
