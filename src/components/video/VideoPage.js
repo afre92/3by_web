@@ -43,11 +43,12 @@ export default class VideoPage extends Component {
   onClickReactions(e){
     const videoId = e.target.getAttribute('data-video-id')
     const reaction = e.target.getAttribute('data-reaction')
-
-    axios.post(`http://localhost:3001/video/${videoId}/reaction`, {reaction: reaction})
-      .then(res => res)
-      .then(res => this.setState({liked: res.data.liked, disliked: res.data.disliked})
-    )
+    if (!this.state[reaction]){
+      axios.post(`http://localhost:3001/video/${videoId}/reaction`, {reaction: reaction})
+        .then(res => res)
+        .then(res => this.setState({liked: res.data.liked, disliked: res.data.disliked})
+      )
+    }
   }
 
   renderVideo() {
@@ -83,8 +84,8 @@ export default class VideoPage extends Component {
                   <div className="text-center">
                     <h4>REACT:</h4>
                   </div>
-                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="dislike"/>
-                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="like"/>
+                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="disliked"/>
+                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="liked"/>
                 </div>
 
               </div>
