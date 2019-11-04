@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { addFlashMessage } from '../actions/flashMessages'
+import { logout } from '../actions/authActions'
 
 export default function(ComposedComponent) {
   class Authenticate extends Component {
@@ -12,7 +13,7 @@ export default function(ComposedComponent) {
           type: 'error',
           text: 'you need to login to access this page'
         });
-        // logout too
+        this.props.logout()
         this.props.history.push('/login')
       }
     }
@@ -38,5 +39,5 @@ export default function(ComposedComponent) {
       auth: state.auth
     }
   }
-  return connect(mapStateToProps, { addFlashMessage })(Authenticate);
+  return connect(mapStateToProps, { addFlashMessage, logout })(Authenticate);
 }
