@@ -66,31 +66,44 @@ export default class VideoPage extends Component {
                 </div>
               </h3>
               <div className="mb-5 mt-5 row center-horizontally">
-                <div className="mr-5 col-md-2 video-reactions col-sm-0">
+                <div className=" col-md-2 video-reactions d-none d-md-block">
                   <Link to={`/video/${prev}`}>
                     <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
                   </Link>
                 </div>
-                <div className="col-md-7">
+                <div className="col-md-8">
                   <div className='videoWrapper'>                
                     <iframe src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0"></iframe>
                   </div>
                 </div>
 
-                <div className="ml-5  col-md-2 video-reactions col-sm-0">
+                <div className="col-md-2 video-reactions d-none d-md-block">
                   <Link to={`/video/${next}`}>
                     <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
                   </Link>
                 </div>
               </div>
-              <div className="display-inline video-controls">
+              <div className="display-inline row center-horizontally">
+                <div className="col-sm-3 col-3 video-reactions d-block d-md-none">
+                  <Link to={`/video/${prev}`}>
+                    <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
+                  </Link>
+                </div>
 
-                <div className="video-reactions">
+                <div className="col-sm-6 col-6 video-reactions">
                   <div className="text-center">
                     <h4>REACT:</h4>
                   </div>
-                  <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="disliked"/>
-                  <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="liked"/>
+                  <div className="center-horizontally">
+                    <img src={angryEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji angry" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="disliked"/>
+                    <img src={inLoveEmojiUrl} alt="Rounded" className="img-fluid rounded shadow reaction-emoji in-love" onClick={this.onClickReactions} data-video-id={video.id} data-reaction="liked"/>
+                  </div>
+                </div>
+
+                <div className="col-sm-3 col-3 video-reactions d-block d-md-none">
+                  <Link to={`/video/${next}`}>
+                    <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
+                  </Link>
                 </div>
 
               </div>
