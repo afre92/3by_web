@@ -66,9 +66,9 @@ export default class VideoPage extends Component {
                 </div>
               </h3>
               <div className="mb-5 mt-5 row center-horizontally">
-                <div className=" col-md-2 video-reactions d-none d-md-block">
+                <div className="col-lg-2 col-md-2 video-reactions d-none d-md-block">
                   <Link to={`/video/${prev}`}>
-                    <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
+                    <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow float-right" />
                   </Link>
                 </div>
                 <div className="col-md-8">
@@ -77,7 +77,7 @@ export default class VideoPage extends Component {
                   </div>
                 </div>
 
-                <div className="col-md-2 video-reactions d-none d-md-block">
+                <div className="col-lg-2 col-md-2 video-reactions d-none d-md-block">
                   <Link to={`/video/${next}`}>
                     <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
                   </Link>
