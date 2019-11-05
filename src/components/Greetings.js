@@ -7,12 +7,12 @@ class Greetings extends React.Component {
       <div className="wrapper">
         <div className="landing-page">
       <div className="page-header position-inherit">
-        <img src="../assets/img/blob.png" className="path"/>
-        <img src="../assets/img/path2.png" className="path2"/>
-        <img src="../assets/img/triunghiuri.png" className="shapes triangle"/>
-        <img src="../assets/img/waves.png" className="shapes wave"/>
-        <img src="../assets/img/patrat.png" className="shapes squares"/>
-        <img src="../assets/img/cercuri.png" className="shapes circle"/>
+        <img src="../assets/img/blob.png" className="path" alt="background-shapes"/>
+        <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/>
+        <img src="../assets/img/triunghiuri.png" className="shapes triangle" alt="background-shapes"/>
+        <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes"/>
+        <img src="../assets/img/patrat.png" className="shapes squares" alt="background-shapes"/>
+        <img src="../assets/img/cercuri.png" className="shapes circle" alt="background-shapes"/>
         <div className="container pt-200">
           <div className="row row-grid justify-content-between align-items-center text-left">
             <div className="col-lg-5 col-md-5 ml-5">
@@ -28,46 +28,46 @@ class Greetings extends React.Component {
               </div> */}
               <div className="btn-wrapper">
                 <div className="button-container">
-                  <button href="javascript:void(0)" className="btn btn-icon btn-simple btn-round btn-neutral">
+                  <button href="#" className="btn btn-icon btn-simple btn-round btn-neutral">
                     <i className="fab fa-twitter"></i>
                   </button>
-                  <button href="javascript:void(0)" className="btn btn-icon btn-simple btn-round btn-neutral">
+                  <button href="#" className="btn btn-icon btn-simple btn-round btn-neutral">
                     <i className="fab fa-dribbble"></i>
                   </button>
-                  <button href="javascript:void(0)" className="btn btn-icon btn-simple btn-round btn-neutral">
+                  <button href="#" className="btn btn-icon btn-simple btn-round btn-neutral">
                     <i className="fab fa-facebook"></i>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="col-md-5 section-safe mr-5">
-              <img src="../assets/img/chester-wade.jpg" class="img-fluid floating"/>
-                <div class="card card-stats bg-primary">
-                    <div class="card-body">
-                        <div class="justify-content-center">
-                          <div class="numbers">
-                            <p class="card-title">100%</p>
-                            <p class="card-category text-white">Safe</p>
+            <div className="col-md-5 section-safe mr-5">
+              <img src="../assets/img/chester-wade.jpg" className="img-fluid floating" alt="background-shapes"/>
+                <div className="card card-stats bg-primary">
+                    <div className="card-body">
+                        <div className="justify-content-center">
+                          <div className="numbers">
+                            <p className="card-title">100%</p>
+                            <p className="card-category text-white">Safe</p>
                           </div>
                         </div>
                     </div>
                   </div>
-                  <div class="card card-stats bg-info">
-                    <div class="card-body">
-                      <div class="justify-content-center">
-                        <div class="numbers">
-                          <p class="card-title">573 K</p>
-                          <p class="card-category text-white">Satisfied customers</p>
+                  <div className="card card-stats bg-info">
+                    <div className="card-body">
+                      <div className="justify-content-center">
+                        <div className="numbers">
+                          <p className="card-title">573 K</p>
+                          <p className="card-category text-white">Satisfied customers</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="card card-stats bg-default">
-                    <div class="card-body">
-                      <div class="justify-content-center">
-                        <div class="numbers">
-                          <p class="card-title">10 425</p>
-                          <p class="card-category text-white">Business</p>
+                  <div className="card card-stats bg-default">
+                    <div className="card-body">
+                      <div className="justify-content-center">
+                        <div className="numbers">
+                          <p className="card-title">10 425</p>
+                          <p className="card-category text-white">Business</p>
                         </div>
                       </div>
                     </div>
@@ -78,7 +78,7 @@ class Greetings extends React.Component {
       </div>
       <section className=" section-lg">
         <section className="">
-          <img src="../assets/img/path4.png" className="path"/>
+          <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
           <div className="container">
             <div className="row row-grid justify-content-between">
               <div className="col-md-5 mt-lg-5">
@@ -175,7 +175,7 @@ class Greetings extends React.Component {
                   <br/>
                   <p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray.</p>
                   <br/>
-                  <a href="#" className="font-weight-bold text-info mt-5">Show all <i className="tim-icons icon-minimal-right text-info"></i></a>
+                  <a href="/show-all" className="font-weight-bold text-info mt-5">Show all <i className="tim-icons icon-minimal-right text-info"></i></a>
                 </div>
               </div>
             </div>
@@ -183,9 +183,9 @@ class Greetings extends React.Component {
         </section>
       </section>
       <section className="section section-lg">
-        <img src="../assets/img/path4.png" className="path"/>
-        <img src="../assets/img/path5.png" className="path2"/>
-        <img src="../assets/img/path2.png" className="path3"/>
+        <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
+        <img src="../assets/img/path5.png" className="path2" alt="background-shapes"/>
+        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/>
         <div className="container section">
           <div className="row justify-content-center">
             <div className="col-lg-12">
@@ -227,11 +227,11 @@ class Greetings extends React.Component {
         </div>
       </section>
       <section className="section section-lg section-safe">
-        <img src="../assets/img/path5.png" className="path"/>
+        <img src="../assets/img/path5.png" className="path" alt="background-shapes"/>
         <div className="container">
           <div className="row row-grid justify-content-between">
             <div className="col-md-5">
-              <img src="../assets/img/chester-wade.jpg" className="img-fluid floating"/>
+              <img src="../assets/img/chester-wade.jpg" className="img-fluid floating" alt="background-shapes"/>
               <div className="card card-stats bg-danger">
                 <div className="card-body">
                   <div className="justify-content-center">
@@ -306,8 +306,8 @@ class Greetings extends React.Component {
         </div>
       </section>
       <section className="section section-lg">
-        <img src="../assets/img/path4.png" className="path"/>
-        <img src="../assets/img/path2.png" className="path2"/>
+        <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
+        <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/>
         <div className="col-md-12">
           <div className="card card-chart card-plain">
             <div className="card-header">

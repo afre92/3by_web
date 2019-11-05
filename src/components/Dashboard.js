@@ -8,11 +8,11 @@ export default class Dashboard extends Component {
     return (
 <div className="landing-page">
 <div className="page-header" >
-      <img src="../assets/img/blob.png" class="path" />
-      <img src="../assets/img/path2.png" class="path2" />
-      <img src="../assets/img/triunghiuri.png" class="shapes triangle" />
-      <img src="../assets/img/waves.png" class="shapes wave" />
-      <img src="../assets/img/cercuri.png" class="shapes circle" />
+      <img src="../assets/img/blob.png" className="path" alt="background-shapes"/>
+      <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/>
+      <img src="../assets/img/triunghiuri.png" className="shapes triangle" alt="background-shapes"/>
+      <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes" />
+      <img src="../assets/img/cercuri.png" className="shapes circle" alt="background-shapes"/>
       <div className="dashboard center-horizontally">
       
         <div className="dashboard-tiles col-md-9 col-sm-12 " >
@@ -88,10 +88,10 @@ export default class Dashboard extends Component {
               </div>
 
             </div>
-            <div class="btn-wrapper col-md-12 text-center mt-5">
-              <p class="category text-primary d-inline">VIEW MORE</p>
-              <a href="#blk" class="btn btn-primary btn-link btn-sm">
-                <i class="tim-icons icon-minimal-down"></i>
+            <div className="btn-wrapper col-md-12 text-center mt-5">
+              <p className="category text-primary d-inline">VIEW MORE</p>
+              <a href="#blk" className="btn btn-primary btn-link btn-sm">
+                <i className="tim-icons icon-minimal-down"></i>
               </a>
             </div>
         </div>

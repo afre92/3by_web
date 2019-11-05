@@ -7,7 +7,7 @@ import { logout } from '../actions/authActions'
 export default function(ComposedComponent) {
   class Authenticate extends Component {
 
-    componentWillMount(){
+    componentDidMount(){
       if (!this.props.auth.isAuthenticated || (this.props.auth.user.exp < new Date().getTime() / 1000) ) {
         this.props.addFlashMessage({
           type: 'error',

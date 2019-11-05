@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
-import jwt_decode from 'jwt-decode';
 import isEmpty from 'lodash/isEmpty';
 import axios from 'axios'
 

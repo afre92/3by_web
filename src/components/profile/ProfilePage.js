@@ -12,8 +12,8 @@ class ProfilePage extends Component {
       <div className="profile-page">
         <div className="wrapper mb-5 container">
           <div className="page-header">
-            <img src="/assets/img/dots.png" className="dots" />
-            <img src="/assets/img/path4.png" className="path" />
+            <img src="/assets/img/dots.png" className="dots" alt="background-shapes"/>
+            <img src="/assets/img/path4.png" className="path" alt="background-shapes" />
             <div className="pt-100 align-items-center">
               <div className="row">
                 <div className="col-md-6">
