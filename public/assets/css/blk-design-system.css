@@ -21008,3 +21008,27 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 .capitalize {
   text-transform: capitalize !important;
 }
+
+.player-size {
+  width: 707 !important;
+  height: 310 !important;
+  }
+
+
+  .videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* .video-wrapper {
+  width: 85%;
+} */

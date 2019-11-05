@@ -65,14 +65,19 @@ export default class VideoPage extends Component {
                   <hr className="line-primary centered-line mb-0"></hr>
                 </div>
               </h3>
-              <div className="video-page center-horizontally mb-5 mt-5">
-                <div className="mr-5 video-reactions">
+              <div className="mb-5 mt-5 row center-horizontally">
+                <div className="mr-5 col-md-2 video-reactions col-sm-0">
                   <Link to={`/video/${prev}`}>
                     <img src="/assets/img/left-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow" />
                   </Link>
-                </div>                
-                <iframe width="907" height="510" id="ifrm" src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div className="ml-5 video-reactions">
+                </div>
+                <div className="col-md-7">
+                  <div className='videoWrapper'>                
+                    <iframe src={`https://www.youtube.com/embed/${video.yt_id}?rel=0&showinfo=0`} frameborder="0"></iframe>
+                  </div>
+                </div>
+
+                <div className="ml-5  col-md-2 video-reactions col-sm-0">
                   <Link to={`/video/${next}`}>
                     <img src="/assets/img/right-chevron.png" alt="Rounded" className="img-fluid rounded shadow control-arrow " />
                   </Link>
@@ -92,6 +97,7 @@ export default class VideoPage extends Component {
             </div>
           </div>
         </div>
+
       </div>
     )
   }
@@ -103,3 +109,4 @@ export default class VideoPage extends Component {
       )
   }
 }
+
