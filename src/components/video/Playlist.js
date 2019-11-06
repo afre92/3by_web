@@ -45,7 +45,7 @@ class Playlist extends Component {
         const videosList = this.state.playlist.videos[0].map(video => (
 
             <tr className="text-center" key={video.id} onClick={this.onClick.bind(this, video.id)}>
-                <td scope="row" className="center-horizontally">
+                <td className="center-horizontally">
                     <img src={video.thumbnails.default.url} alt="Rounded" className="img-fluid rounded shadow playlist-thumbnail" />
                 </td>
                 <td className="video-title"><p>{video.title}</p></td>
@@ -64,7 +64,7 @@ class Playlist extends Component {
             <div className="col-md-9 col-sm-12">
                 <div className="playlist-info row">
                     <div className="track-art col-md-4 center-horizontally">
-                        <img src="/assets/img/ryan.jpg" alt="Rounded image" className="img-fluid rounded shadow art" />
+                        <img src="/assets/img/ryan.jpg" alt="Rounded" className="img-fluid rounded shadow art" />
                     </div>
                 <div className="track-info col-md-8">
                     <div className="track-title text-white">
