@@ -10,14 +10,21 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
+      rememberMe: false,
       errors: {},
       isLoading: false
     }
 
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+    this.onChangeCheckBox = this.onChangeCheckBox.bind(this)
 
+  }
 
+  onChangeCheckBox(e){
+    this.setState({
+      [e.target.name]: !this.state.rememberMe
+    })
   }
 
   onChange(e){
@@ -45,11 +52,11 @@ class LoginForm extends Component {
         <br />
         <div className="auth-icons">
           <div className="btn-wrapper text-center">
-            <a href="#" className="btn btn-neutral btn-icon">
-              <img src="assets/img/github.svg" />
+            <a href="/somewhere" className="btn btn-neutral btn-icon">
+              <img src="assets/img/github.svg" alt="github-logo"/>
             </a>
-            <a href="#" className="btn btn-neutral btn-icon">
-              <img src="assets/img/google.svg" />
+            <a href="/somewhere" className="btn btn-neutral btn-icon">
+              <img src="assets/img/google.svg"  alt="google-logo"/>
             </a>
           </div>
         </div>
@@ -80,7 +87,7 @@ class LoginForm extends Component {
         
         <div className="form-check mt-3">
           <label className="form-check-label">
-            <input className="form-check-input" type="checkbox" checked />
+            <input className="form-check-input" type="checkbox" name="rememberMe" onChange={this.onChangeCheckBox} checked={this.state.rememberMe}/>
             <span className="form-check-sign"></span>
             Remember me!
           </label>

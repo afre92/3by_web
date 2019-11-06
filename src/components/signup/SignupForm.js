@@ -68,7 +68,7 @@ export default class SignupForm extends Component {
     return (
       <div className="card card-register">
         <div className="card-header">
-          <img className="card-img" src="../assets/img/square1.png" alt="Card image" />
+          <img className="card-img" src="../assets/img/square1.png" alt="Card" />
           <h4 className="card-title"> Register</h4>
         </div>
         <div className="card-body">
