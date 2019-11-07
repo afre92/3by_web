@@ -8,6 +8,6 @@ export function userSignupRequest(userData) {
 
 export function userExists(id) {
   return dispatch => {
-    return axios.get(`http://localhost:3001/check_user/${id}`)
+    return axios.get(`${process.env.REACT_APP_API_URL}/check_user/${id}`)
   }
 }
