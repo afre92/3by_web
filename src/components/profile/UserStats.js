@@ -23,7 +23,7 @@ export default class UserStats extends Component {
   }
 
   fetchData(){
-    axios.get(`http://localhost:3001/user/${this.props.user.username}/reactions`)
+    axios.get(`${process.env.REACT_APP_API_URL}/user/${this.props.user.username}/reactions`)
       .then((err) => err)
       .then(res => {
          this.setState({liked: res.data.liked, disliked: res.data.disliked, isLoading: false})

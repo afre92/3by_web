@@ -56,7 +56,7 @@ export default class ProfileForm extends Component {
       invalid = true;
       this.setState({ errors, invalid })
     } else{
-        axios.get(`http://localhost:3001/check_user/${val}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/check_user/${val}`)
         .then(res => {
           if (res.data && this.props.username !== val) {
             errors[field] = 'There is user with such ' + field;
@@ -73,7 +73,7 @@ export default class ProfileForm extends Component {
   onSubmit(e){
     this.setState({ errors: {}, isLoading: true});
     e.preventDefault();
-    axios.put(`http://localhost:3001/users/${this.props.username}`, this.state)
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.username}`, this.state)
     .then(
       () => {
         this.props.addFlashMessage({

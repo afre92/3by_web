@@ -18,7 +18,7 @@ export default class VideoPage extends Component {
   }
 
   fetchData(videoId){
-    axios.get(`http://localhost:3001/video/${videoId}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/video/${videoId}`)
       .then(res => res)
       .then(res => this.setState({
         video: res.data.video, 
@@ -44,7 +44,7 @@ export default class VideoPage extends Component {
     const videoId = e.target.getAttribute('data-video-id')
     const reaction = e.target.getAttribute('data-reaction')
     if (!this.state[reaction]){
-      axios.post(`http://localhost:3001/video/${videoId}/reaction`, {reaction: reaction})
+      axios.post(`${process.env.REACT_APP_API_URL}/video/${videoId}/reaction`, {reaction: reaction})
         .then(res => res)
         .then(res => this.setState({liked: res.data.liked, disliked: res.data.disliked})
       )

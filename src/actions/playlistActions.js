@@ -3,7 +3,7 @@ import axios from "axios";
 
 export function fetchPlaylist(){
     return dispatch => {
-      axios.get('http://localhost:3001/playlist/chilling')
+      axios.get(`${process.env.REACT_APP_API_URL}/playlist/chilling`)
         .then(res => res)
         .then(playlist =>
           dispatch({
