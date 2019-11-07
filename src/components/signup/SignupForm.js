@@ -32,6 +32,7 @@ export default class SignupForm extends Component {
     const val = e.target.value;
     if (val.length >= 3) {
       this.props.userExists(val).then(res => {
+        
         let errors = this.state.errors;
         let invalid;
         if (res.data) {
@@ -78,7 +79,7 @@ export default class SignupForm extends Component {
               error={errors.username}
               placeholder="Username"
               icon="icon-single-02"
-              checkUserExists={this.checkUserExists}
+              onBlur={this.checkUserExists}
               onChange={this.onChange}
               value={this.state.username}
               field="username"
@@ -88,7 +89,7 @@ export default class SignupForm extends Component {
               error={errors.email}
               placeholder="Email"
               icon="icon-email-85"
-              checkUserExists={this.checkUserExists}
+              onBlur={this.checkUserExists}
               onChange={this.onChange}
               value={this.state.email}
               field="email"
