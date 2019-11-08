@@ -82,6 +82,7 @@ export default class SignupForm extends Component {
               onChange={this.onChange}
               value={this.state.username}
               field="username"
+              required={true}
             />
 
             <TextFieldGroup
@@ -92,6 +93,7 @@ export default class SignupForm extends Component {
               onChange={this.onChange}
               value={this.state.email}
               field="email"
+              required={true}
             />
 
             <TextFieldGroup
@@ -102,6 +104,7 @@ export default class SignupForm extends Component {
               value={this.state.password}
               field="password"
               type="password"
+              required={true}
             />
 
             <TextFieldGroup
@@ -112,6 +115,7 @@ export default class SignupForm extends Component {
               value={this.state.password_confirmation}
               field="password_confirmation"
               type="password"
+              required={true}
             />
 
 <div className="card-footer">
