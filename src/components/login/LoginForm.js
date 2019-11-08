@@ -3,6 +3,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import { connect } from 'react-redux';
 import { login } from '../../actions/authActions';
 import PropTypes from 'prop-types';
+import { deleteFlashMessage } from '../../actions/flashMessages'
 
 class LoginForm extends Component {
   constructor(props){
@@ -37,7 +38,13 @@ class LoginForm extends Component {
     e.preventDefault();
     this.setState({ errors: {}, isLoading: true});
     this.props.login(this.state).then(
-      (res) => this.props.history.push('/playlists'),
+      (res) => { 
+        if (this.props.messages.length > 0) {
+          const flashId = this.props.messages[0].id
+          this.props.deleteFlashMessage(flashId)
+        }
+        return this.props.history.push('/playlists')
+      },
       (err) => this.setState({ errors: err['response']['data'], isLoading: false})
     )
   }
@@ -109,5 +116,10 @@ LoginForm.propTypes = {
   login: PropTypes.func.isRequired
 }
 
+function mapStateToProps(state) {
+  return {
+      messages: state.flashMessages
+  }
+}
 
-export default connect(null, { login })(LoginForm)
+export default connect(mapStateToProps, { login, deleteFlashMessage })(LoginForm)
