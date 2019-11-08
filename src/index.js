@@ -31,7 +31,7 @@ const store = createStore(
   )
 )
 
-NetworkService.setupInterceptors(store);
+// NetworkService.setupInterceptors(store);
 
 if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);

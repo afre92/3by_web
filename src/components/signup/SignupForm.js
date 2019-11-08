@@ -56,9 +56,8 @@ export default class SignupForm extends Component {
         this.props.addFlashMessage({
           type: 'success',
           text: 'you signed up successfully. Welcome!'
-
         });
-        this.props.history.push('/playlists');
+        this.props.history.push('/login');
       },
       ({ data }) => this.setState({ erros: data, isLoading: false})
     )
@@ -114,13 +113,15 @@ export default class SignupForm extends Component {
               field="password_confirmation"
               type="password"
             />
-          </form>
-        </div>
-        <div className="card-footer">
+
+<div className="card-footer">
           <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-info btn-round btn-lg">
                   Sign Up
           </button>
         </div>
+          </form>
+        </div>
+
       </div>
     )
   }
