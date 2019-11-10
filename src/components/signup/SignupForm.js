@@ -57,6 +57,7 @@ export default class SignupForm extends Component {
           type: 'success',
           text: 'you signed up successfully. Welcome!'
         });
+        // redirect to login to avoid creating token from api
         this.props.history.push('/login');
       },
       ({ data }) => this.setState({ erros: data, isLoading: false})
