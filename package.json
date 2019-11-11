@@ -2,10 +2,15 @@
   "name": "3by",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "5.7.1",
+    "node": "9.5.0"
+  },
   "dependencies": {
     "@version/react-router-v3": "^1.0.0",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
+    "env-cmd": "^10.0.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "prop-types": "^15.7.2",
@@ -20,8 +25,9 @@
     "shortid": "^2.2.15"
   },
   "scripts": {
-    "start": "env-cmd -f .env.development react-scripts start",
+    "start": "env-cmd -f .env.production react-scripts start",
     "build": "react-scripts build",
+    "start:development": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

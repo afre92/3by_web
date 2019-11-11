@@ -32,6 +32,7 @@ export default class SignupForm extends Component {
     const val = e.target.value;
     if (val.length >= 3) {
       this.props.userExists(val).then(res => {
+        
         let errors = this.state.errors;
         let invalid;
         if (res.data) {
@@ -55,9 +56,9 @@ export default class SignupForm extends Component {
         this.props.addFlashMessage({
           type: 'success',
           text: 'you signed up successfully. Welcome!'
-
         });
-        this.props.history.push('/playlists');
+        // redirect to login to avoid creating token from api
+        this.props.history.push('/login');
       },
       ({ data }) => this.setState({ erros: data, isLoading: false})
     )
@@ -78,20 +79,22 @@ export default class SignupForm extends Component {
               error={errors.username}
               placeholder="Username"
               icon="icon-single-02"
-              checkUserExists={this.checkUserExists}
+              onBlur={this.checkUserExists}
               onChange={this.onChange}
               value={this.state.username}
               field="username"
+              required={true}
             />
 
             <TextFieldGroup
               error={errors.email}
               placeholder="Email"
               icon="icon-email-85"
-              checkUserExists={this.checkUserExists}
+              onBlur={this.checkUserExists}
               onChange={this.onChange}
               value={this.state.email}
               field="email"
+              required={true}
             />
 
             <TextFieldGroup
@@ -102,6 +105,7 @@ export default class SignupForm extends Component {
               value={this.state.password}
               field="password"
               type="password"
+              required={true}
             />
 
             <TextFieldGroup
@@ -112,14 +116,17 @@ export default class SignupForm extends Component {
               value={this.state.password_confirmation}
               field="password_confirmation"
               type="password"
+              required={true}
             />
-          </form>
-        </div>
-        <div className="card-footer">
+
+<div className="card-footer">
           <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-info btn-round btn-lg">
                   Sign Up
           </button>
         </div>
+          </form>
+        </div>
+
       </div>
     )
   }

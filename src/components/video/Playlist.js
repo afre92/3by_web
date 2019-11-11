@@ -18,7 +18,7 @@ class Playlist extends Component {
 
     componentDidMount(){
         const { name } = this.props.match.params
-        axios.get(`http://localhost:3001/playlist/${name}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/playlist/${name}`)
         .then(res => res)
         .then(playlist => this.setState({playlist: playlist.data})
       )
