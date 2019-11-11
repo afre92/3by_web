@@ -305,28 +305,7 @@ class Greetings extends React.Component {
           </div>
         </div>
       </section>
-      <section className="section section-lg">
-        <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
-        <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/>
-        <div className="col-md-12">
-          <div className="card card-chart card-plain">
-            <div className="card-header">
-              <div className="row">
-                <div className="col-sm-6 text-left">
-                  <hr className="line-primary"/>
-                  <h5 className="card-category">Total Investments</h5>
-                  <h2 className="card-title">Performance</h2>
-                </div>
-              </div>
-            </div>
-            <div className="card-body">
-              <div className="chart-area">
-                <canvas id="chartBig"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
     </div>
     )
