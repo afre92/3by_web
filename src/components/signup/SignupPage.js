@@ -9,7 +9,7 @@ class SignupPage extends Component {
   render() {
     const { userSignupRequest, addFlashMessage, userExists } = this.props;
     return (
-      <div className="register-page">
+      <div className="su register-page">
         <div id="square7" className="square square-7"></div>
         <div id="square8" className="square square-8"></div>
         <div className="col-md-4 col-md-offset-4 offset-md-1 register-content">

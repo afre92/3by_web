@@ -21029,6 +21029,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 	height: 100%;
 }
 
-/* .video-wrapper {
-  width: 85%;
-} */
+div.su.register-page {
+  position: relative;
+  max-height: 900px;
+}
