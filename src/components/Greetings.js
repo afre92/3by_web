@@ -13,8 +13,8 @@ class Greetings extends React.Component {
         <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes"/>
         <img src="../assets/img/patrat.png" className="shapes squares" alt="background-shapes"/>
         <img src="../assets/img/cercuri.png" className="shapes circle" alt="background-shapes"/>
-        <div className="container pt-200">
-          <div className="row row-grid justify-content-between align-items-center text-left">
+        <div className="container d-flex">
+          <div className="row row-grid justify-content-between align-items-center text-left mb-100">
             <div className="col-lg-5 col-md-5 ml-5">
               <h1 className="text-white">Welcome to 3by, your AI
                 <br/>
@@ -226,86 +226,6 @@ class Greetings extends React.Component {
           </div>
         </div>
       </section>
-      <section className="section section-lg section-safe">
-        <img src="../assets/img/path5.png" className="path" alt="background-shapes"/>
-        <div className="container">
-          <div className="row row-grid justify-content-between">
-            <div className="col-md-5">
-              <img src="../assets/img/chester-wade.jpg" className="img-fluid floating" alt="background-shapes"/>
-              <div className="card card-stats bg-danger">
-                <div className="card-body">
-                  <div className="justify-content-center">
-                    <div className="numbers">
-                      <p className="card-title">100%</p>
-                      <p className="card-category text-white">Safe</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card card-stats bg-info">
-                <div className="card-body">
-                  <div className="justify-content-center">
-                    <div className="numbers">
-                      <p className="card-title">573 K</p>
-                      <p className="card-category text-white">Satisfied customers</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card card-stats bg-default">
-                <div className="card-body">
-                  <div className="justify-content-center">
-                    <div className="numbers">
-                      <p className="card-title">10 425</p>
-                      <p className="card-category text-white">Business</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="px-md-5">
-                <hr className="line-success"/>
-                <h3>Awesome features</h3>
-                <p>The design system comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-                <ul className="list-unstyled mt-5">
-                  <li className="py-2">
-                    <div className="d-flex align-items-center">
-                      <div className="icon icon-success mb-2">
-                        <i className="tim-icons icon-vector"></i>
-                      </div>
-                      <div className="ml-3">
-                        <h6>Carefully crafted components</h6>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="py-2">
-                    <div className="d-flex align-items-center">
-                      <div className="icon icon-success mb-2">
-                        <i className="tim-icons icon-tap-02"></i>
-                      </div>
-                      <div className="ml-3">
-                        <h6>Amazing page examples</h6>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="py-2">
-                    <div className="d-flex align-items-center">
-                      <div className="icon icon-success mb-2">
-                        <i className="tim-icons icon-single-02"></i>
-                      </div>
-                      <div className="ml-3">
-                        <h6>Super friendly support team</h6>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
     </div>
     )
