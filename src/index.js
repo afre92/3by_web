@@ -20,7 +20,6 @@ import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
 import Profile from './components/profile/ProfilePage';
-import NetworkService from './network-service'
 
 
 const store = createStore(
@@ -30,8 +29,6 @@ const store = createStore(
     window.devToolsExtension ? window.devToolsExtension(): f => f
   )
 )
-
-// NetworkService.setupInterceptors(store);
 
 if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);
