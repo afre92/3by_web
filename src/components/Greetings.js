@@ -79,6 +79,52 @@ class Greetings extends React.Component {
       <section className=" section-lg">
         <section className="">
           <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
+                  <div className="container section">
+          <div className="row justify-content-center">
+            <div className="col-lg-12">
+              <h1 className="text-center">Your best benefit</h1>
+              <div className="row row-grid justify-content-center">
+                <div className="col-lg-3">
+                  <div className="info">
+                    <div className="icon icon-primary">
+                      <i className="tim-icons icon-money-coins"></i>
+                    </div>
+                    <h4 className="info-title">Low Commission</h4>
+                    <hr className="line-primary"/>
+                    <p>Divide details about your work into parts. Write a few lines about each one. A paragraph describing a feature will.</p>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="info">
+                    <div className="icon icon-warning">
+                      <i className="tim-icons icon-chart-pie-36"></i>
+                    </div>
+                    <h4 className="info-title">High Incomes</h4>
+                    <hr className="line-warning"/>
+                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing feature will be a feature. </p>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="info">
+                    <div className="icon icon-success">
+                      <i className="tim-icons icon-single-02"></i>
+                    </div>
+                    <h4 className="info-title">Verified People</h4>
+                    <hr className="line-success"/>
+                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing be enough.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </section>
+      </section>
+      <section className="section section-lg">
+        <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
+        <img src="../assets/img/path5.png" className="path2" alt="background-shapes"/>
+        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/>
           <div className="container">
             <div className="row row-grid justify-content-between">
               <div className="col-md-5 mt-lg-5">
@@ -180,51 +226,6 @@ class Greetings extends React.Component {
               </div>
             </div>
           </div>
-        </section>
-      </section>
-      <section className="section section-lg">
-        <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
-        <img src="../assets/img/path5.png" className="path2" alt="background-shapes"/>
-        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/>
-        <div className="container section">
-          <div className="row justify-content-center">
-            <div className="col-lg-12">
-              <h1 className="text-center">Your best benefit</h1>
-              <div className="row row-grid justify-content-center">
-                <div className="col-lg-3">
-                  <div className="info">
-                    <div className="icon icon-primary">
-                      <i className="tim-icons icon-money-coins"></i>
-                    </div>
-                    <h4 className="info-title">Low Commission</h4>
-                    <hr className="line-primary"/>
-                    <p>Divide details about your work into parts. Write a few lines about each one. A paragraph describing a feature will.</p>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div className="info">
-                    <div className="icon icon-warning">
-                      <i className="tim-icons icon-chart-pie-36"></i>
-                    </div>
-                    <h4 className="info-title">High Incomes</h4>
-                    <hr className="line-warning"/>
-                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing feature will be a feature. </p>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div className="info">
-                    <div className="icon icon-success">
-                      <i className="tim-icons icon-single-02"></i>
-                    </div>
-                    <h4 className="info-title">Verified People</h4>
-                    <hr className="line-success"/>
-                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing be enough.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
     </div>
