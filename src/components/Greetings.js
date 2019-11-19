@@ -7,8 +7,8 @@ class Greetings extends React.Component {
       <div className="wrapper">
         <div className="landing-page">
       <div className="page-header position-inherit">
-        <img src="../assets/img/blob.png" className="path" alt="background-shapes"/>
-        <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/>
+        {/* <img src="../assets/img/blob.png" className="path" alt="background-shapes"/>
+        <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/> */}
         <img src="../assets/img/triunghiuri.png" className="shapes triangle" alt="background-shapes"/>
         <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes"/>
         <img src="../assets/img/patrat.png" className="shapes squares" alt="background-shapes"/>
@@ -76,7 +76,7 @@ class Greetings extends React.Component {
           </div>
         </div>
       </div>
-      <section className=" section-lg">
+      <section className="position-static section section-lg">
         <section className="">
           <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
                   <div className="container section">
@@ -121,10 +121,10 @@ class Greetings extends React.Component {
 
         </section>
       </section>
-      <section className="section section-lg">
-        <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
+      <section className="position-static section section-lg mt-200 mb-200">
+        {/* <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
         <img src="../assets/img/path5.png" className="path2" alt="background-shapes"/>
-        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/>
+        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/> */}
           <div className="container">
             <div className="row row-grid justify-content-between">
               <div className="col-md-5 mt-lg-5">
