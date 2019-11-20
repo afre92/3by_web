@@ -7,8 +7,8 @@ class Greetings extends React.Component {
       <div className="wrapper">
         <div className="landing-page">
       <div className="page-header position-inherit">
-        {/* <img src="../assets/img/blob.png" className="path" alt="background-shapes"/>
-        <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/> */}
+        <img src="../assets/img/blob.png" className="path" alt="background-shapes"/>
+        {/* <img src="../assets/img/path2.png" className="path2" alt="background-shapes"/> */}
         <img src="../assets/img/triunghiuri.png" className="shapes triangle" alt="background-shapes"/>
         <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes"/>
         <img src="../assets/img/patrat.png" className="shapes squares" alt="background-shapes"/>
@@ -20,8 +20,7 @@ class Greetings extends React.Component {
                 <br/>
                 <span className="text-white">video concierge</span>
               </h1>
-              <p className="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and 
-              weet mornings of spring which I enjoy with my whole heart. I am alone feel...</p>
+              <p className="text-white mb-3">3by is a video recommendation application that uses an advance algorithm to find other videos you might be interested in based on a few likes (or dislikes) in  the our existing videos . 3by will add three new videos per category each week so you never run out of content. Sign up now!</p>
               {/* <div className="btn-wrapper mb-3">
                 <p className="category text-primary d-inline">From 9.99%/mo</p>
                 <a href="#blk" className="btn btn-primary btn-link btn-sm"><i className="tim-icons icon-minimal-right"></i></a>
@@ -82,7 +81,7 @@ class Greetings extends React.Component {
                   <div className="container section">
           <div className="row justify-content-center">
             <div className="col-lg-12">
-              <h1 className="text-center">Your best benefit</h1>
+              <h1 className="text-center">Lorem Ipsum Yea</h1>
               <div className="row row-grid justify-content-center">
                 <div className="col-lg-3">
                   <div className="info">
@@ -91,7 +90,7 @@ class Greetings extends React.Component {
                     </div>
                     <h4 className="info-title">Low Commission</h4>
                     <hr className="line-primary"/>
-                    <p>Divide details about your work into parts. Write a few lines about each one. A paragraph describing a feature will.</p>
+                    <p>Donec vel leo dignissim orci consectetur consectetur ut in erat. Aliquam leo mauris, laoreet nec eros ut, ornare posuere risus</p>
                   </div>
                 </div>
                 <div className="col-lg-3">
@@ -101,7 +100,7 @@ class Greetings extends React.Component {
                     </div>
                     <h4 className="info-title">High Incomes</h4>
                     <hr className="line-warning"/>
-                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing feature will be a feature. </p>
+                    <p>Aliquam ullamcorper magna sit amet augue consectetur, sagittis hendrerit leo gravida. Sed eleifend, sem vel rhoncus efficitur, ex velit tempor dolor, in semper ligula leo ac enim </p>
                   </div>
                 </div>
                 <div className="col-lg-3">
@@ -111,7 +110,7 @@ class Greetings extends React.Component {
                     </div>
                     <h4 className="info-title">Verified People</h4>
                     <hr className="line-success"/>
-                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing be enough.</p>
+                    <p>Donec a nisl vulputate, ultricies magna eu, pharetra elit. Nullam posuere diam nisi, finibus ultrices justo tempus eu. Phasellus vitae fermentum sapien</p>
                   </div>
                 </div>
               </div>
@@ -122,9 +121,9 @@ class Greetings extends React.Component {
         </section>
       </section>
       <section className="position-static section section-lg mt-200 mb-200">
-        {/* <img src="../assets/img/path4.png" className="path" alt="background-shapes"/>
+        {/* <img src="../assets/img/path4.png" className="path" alt="background-shapes"/> */}
         <img src="../assets/img/path5.png" className="path2" alt="background-shapes"/>
-        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/> */}
+        <img src="../assets/img/path2.png" className="path3" alt="background-shapes"/>
           <div className="container">
             <div className="row row-grid justify-content-between">
               <div className="col-md-5 mt-lg-5">
@@ -215,8 +214,8 @@ class Greetings extends React.Component {
               </div>
               <div className="col-md-6">
                 <div className="pl-md-5">
-                  <h1>Large
-                    <br/>Achivements</h1>
+                  <h1>Neque
+                    <br/> Porro quisquam</h1>
                   <p>I should be capable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. </p>
                   <br/>
                   <p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray.</p>

@@ -16913,7 +16913,7 @@ textarea.form-control:active {
 }
 
 .index-page,
-.landing-page,
+/* .landing-page, */
 .profile-page,
 .register-page {
   background-image: url("../../assets/img/dots.png");
