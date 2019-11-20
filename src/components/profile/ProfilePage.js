@@ -9,8 +9,8 @@ class ProfilePage extends Component {
   render() {
     const {addFlashMessage, logout, auth } = this.props;
     return (
-      <div className="profile-page">
-        <div className="wrapper mb-5 container">
+      <div>
+        <div className="wrapper pb-5 container">
           <div className="page-header">
             <img src="/assets/img/dots.png" className="dots" alt="background-shapes"/>
             <img src="/assets/img/path4.png" className="path" alt="background-shapes" />
