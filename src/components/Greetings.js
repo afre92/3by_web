@@ -20,7 +20,7 @@ class Greetings extends React.Component {
                 <br/>
                 <span className="text-white">video concierge</span>
               </h1>
-              <p className="text-white mb-3">3by is a video recommendation application that uses an advance algorithm to find other videos you might be interested in based on a few likes (or dislikes) in  the our existing videos . 3by will add three new videos per category each week so you never run out of content. Sign up now!</p>
+              <p className="text-white mb-3">3by is a video recommendation application that uses an Artificial Intelligence to find videos you will be interested in based on a few likes (or dislikes) in  the our existing videos . 3by will hand pick three new videos per category each week so you never run out of content. Sign up now!</p>
               {/* <div className="btn-wrapper mb-3">
                 <p className="category text-primary d-inline">From 9.99%/mo</p>
                 <a href="#blk" className="btn btn-primary btn-link btn-sm"><i className="tim-icons icon-minimal-right"></i></a>
@@ -216,9 +216,9 @@ class Greetings extends React.Component {
                 <div className="pl-md-5">
                   <h1>Neque
                     <br/> Porro quisquam</h1>
-                  <p>I should be capable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. </p>
+                  <p>Sed congue augue eget justo gravida maximus. Donec scelerisque erat lacus, a porta turpis ultricies sed. </p>
                   <br/>
-                  <p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray.</p>
+                  <p>Nulla nec consectetur orci, ac scelerisque felis. Mauris enim sapien, dignissim a mi viverra, mollis ornare velit. Aliquam efficitur leo non nibh elementum venenatis. Maecenas consectetur augue sed felis suscipit, vitae aliquam magna efficitur.</p>
                   <br/>
                   <a href="/show-all" className="font-weight-bold text-info mt-5">Show all <i className="tim-icons icon-minimal-right text-info"></i></a>
                 </div>
