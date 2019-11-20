@@ -61,7 +61,7 @@ class Playlist extends Component {
             <div className=" playlist col-md-12 section">
                 <div className="">
             <div className=" center-horizontally pt-5" >
-            <div className="col-md-9 col-sm-12">
+            <div className="col-md-9 col-sm-12 pb-5">
                 <div className="playlist-info row">
                     <div className="track-art col-md-4 center-horizontally">
                         <img src="/assets/img/ryan.jpg" alt="Rounded" className="img-fluid rounded shadow art" />
