@@ -15,6 +15,9 @@ export default class FlashMessage extends Component {
 
     render() {
         const {type, text } = this.props.message;
+        setTimeout(() => {
+          this.onClick();
+        } , 5000)
         return (
             <div className={classnames('alert', {
                 'alert-success': type === 'success',

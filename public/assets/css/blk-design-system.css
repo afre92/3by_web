@@ -21045,3 +21045,8 @@ div.su.register-page {
 .pt-8 {
   padding-top: 8rem;
 }
+
+.fadeOut{
+  opacity:0.1;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}

@@ -3,7 +3,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import { connect } from 'react-redux';
 import { login } from '../../actions/authActions';
 import PropTypes from 'prop-types';
-import { deleteFlashMessage } from '../../actions/flashMessages'
+import { deleteFlashMessage, addFlashMessage } from '../../actions/flashMessages'
 
 class LoginForm extends Component {
   constructor(props){
@@ -42,10 +42,10 @@ class LoginForm extends Component {
     this.setState({ errors: {}, isLoading: true});
     this.props.login(this.state).then(
       (res) => { 
-        if (this.props.messages.length > 0) {
-          const flashId = this.props.messages[0].id
-          this.props.deleteFlashMessage(flashId)
-        }
+        this.props.addFlashMessage({
+          type: 'success',
+          text: 'you logged in successfully. Welcome!'
+        });
         return this.props.history.push('/playlists')
       },
       (err) => this.setState({ errors: err['response']['data'], isLoading: false})
@@ -126,4 +126,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { login, deleteFlashMessage })(LoginForm)
+export default connect(mapStateToProps, { login, deleteFlashMessage, addFlashMessage })(LoginForm)
