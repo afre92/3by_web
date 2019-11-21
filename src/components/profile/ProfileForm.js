@@ -58,7 +58,7 @@ export default class ProfileForm extends Component {
     } else{
         axios.get(`${process.env.REACT_APP_API_URL}/check_user/${val}`)
         .then(res => {
-          if (res.data && this.props.username !== val) {
+          if (res.data && this.props.user.username !== val) {
             errors[field] = 'There is user with such ' + field;
             invalid = true;
           } else {
@@ -100,7 +100,7 @@ export default class ProfileForm extends Component {
             
           </div>
           <div className="card-body"> 
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} autocomplete="off">
               <div className="py-2">
                 <TextFieldGroup
                   onChange={this.onChange}
