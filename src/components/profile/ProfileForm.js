@@ -100,7 +100,7 @@ export default class ProfileForm extends Component {
             
           </div>
           <div className="card-body"> 
-            <form onSubmit={this.onSubmit} autocomplete="off">
+            <form onSubmit={this.onSubmit} autoComplete="off">
               <div className="py-2">
                 <TextFieldGroup
                   onChange={this.onChange}
