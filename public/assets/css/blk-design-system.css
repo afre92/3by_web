@@ -20868,13 +20868,9 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
   margin-bottom: 50px;
 }
 
-/* .playlist {
-  height: 100vh;
-} */
-
-.playlist-info .track-art img {
+/* .playlist-info .track-art img {
   width: 250px;
-}
+} */
 
 .display-inline {
   display: flex;
@@ -21044,4 +21040,8 @@ div.su.register-page {
 }
 .pt-10{
   padding-top: 10rem;
+}
+
+.pt-8 {
+  padding-top: 8rem;
 }

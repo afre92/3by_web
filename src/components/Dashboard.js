@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
 
 export default class Dashboard extends Component {
 
@@ -13,12 +14,12 @@ export default class Dashboard extends Component {
       <img src="../assets/img/triunghiuri.png" className="shapes triangle" alt="background-shapes"/>
       <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes" />
       <img src="../assets/img/cercuri.png" className="shapes circle" alt="background-shapes"/>
-      <div className="dashboard center-horizontally">
+      <div className="dashboard center-horizontally pt-8">
       
         <div className="dashboard-tiles col-md-9 col-sm-12 " >
         <div className="text-center mt-4">
           <h1> Hi, I'm your video concierge </h1>
-          <h3 > It's Monday afternoon, I've for videos for ...</h3>
+          <h3 > It's {moment().format('dddd')} {moment().format('HH') > 12 ? ( moment().format('HH') > 18 ? 'night' : 'afternoon') : 'morning' }, I've for videos for ...</h3>
         </div>
 
           <div className="row center-horizontally pt-4">
@@ -26,7 +27,7 @@ export default class Dashboard extends Component {
               <Link to={`/playlist/chilling`} >
                 <div className="card-body text-center">
                   <div className="justify-content-center">
-                    <div className="numbers" data-playlist="chilling">
+                    <div className="numbers">
                       <i className="fa fa-award"></i>
                         <p className="card-category text-white mt-4">CHILLING</p>
                       </div>
@@ -35,37 +36,44 @@ export default class Dashboard extends Component {
                 </Link>
               </div>
               <div className="card bg-light-white bordered-card col-md-3 col-sm-5" >
-                <div className="card-body text-center">
-                  <div className="justify-content-center">
-                    <div className="numbers">
-                    <i className="fa fa-chart-line"></i>
-                      <p className="card-category text-white mt-4">TOP TRENDING</p>
+                <Link to={`/playlist/trending`} >
+                  <div className="card-body text-center">
+                    <div className="justify-content-center">
+                      <div className="numbers">
+                      <i className="fa fa-chart-line"></i>
+                        <p className="card-category text-white mt-4">TOP TRENDING</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
               <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
+                <Link to={`/playlist/random`} >
                 <div className="card-body text-center">
                   <div className="justify-content-center">
-                    <div className="numbers">
+                    <div className="numbers" >
                     <i className="fa fa-newspaper"></i>
-                      <p className="card-category text-white mt-4">IN THE NEWS </p>
+                      <p className="card-category text-white mt-4">RANDOM</p>
                     </div>
                   </div>
                 </div>
+                </Link>
               </div>
 
               <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
+                <Link to={`/playlist/recommended`} >
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">
                     <i className="fa fa-hourglass-half"></i>
-                      <p className="card-category text-white mt-4">BRAND NEW</p>
+                      <p className="card-category text-white mt-4">RECOMMENDED</p>
                     </div>
                   </div>
                 </div>
+                </Link>
               </div>
               <div className="card  bg-light-white bordered-card col-md-3 col-sm-5">
+              <Link to={`/playlist/geeky`} >
                 <div className="card-body text-center">
                   <div className="justify-content-center">
                     <div className="numbers">
@@ -74,17 +82,19 @@ export default class Dashboard extends Component {
                     </div>
                   </div>
                 </div>
+                </Link>
               </div>
               <div className="card bg-light-white bordered-card col-md-3 col-sm-5">
-                <div className="card-body text-center">
-                  <div className="justify-content-center">
-                    <div className="numbers">
-                    
-                    <i className="fa fa-grin-squint-tears"></i>
-                      <p className="card-category text-white mt-4">FUNNY</p>
+                <Link to={`/playlist/funny`} >
+                  <div className="card-body text-center">
+                    <div className="justify-content-center">
+                      <div className="numbers">
+                      <i className="fa fa-grin-squint-tears"></i>
+                        <p className="card-category text-white mt-4">FUNNY</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
             </div>

@@ -64,7 +64,7 @@ class Playlist extends Component {
             <div className="col-md-9 col-sm-12 pb-5">
                 <div className="playlist-info row">
                     <div className="track-art col-md-4 center-horizontally">
-                        <img src="/assets/img/ryan.jpg" alt="Rounded" className="img-fluid rounded shadow art" />
+                        <img src={this.state.playlist.videos[0][0].thumbnails.medium.url} alt="Rounded" className="img-fluid rounded shadow art" />
                     </div>
                 <div className="track-info col-md-8">
                     <div className="track-title text-white">
@@ -79,9 +79,7 @@ class Playlist extends Component {
                         </h6>
                     </div>
                     <div className="track-info text-white pt-3">
-                    Nam id dui leo. Praesent fringilla blandit congue. Praesent ut elit nibh. Aenean vitae magna et orci scelerisque pulvinar. Vivamus ligula nunc, facilisis ut ullamcorper at,
-                     ultricies sit amet mauris. Sed nibh sem, lobortis eget dui ut, scelerisque tempus orci. Praesent ut elit nibh. Aenean vitae magna et orci scelerisque pulvinar. Vivamus ligula nunc, facilisis ut ullamcorper at,
-                     ultricies sit amet mauris. Sed nibh sem, lobortis eget dui ut
+                    Nulla ut blandit sem, et pretium arcu. Maecenas neque elit, pulvinar ac elementum sit amet, imperdiet vitae diam. Cras eu ornare dolor. Proin nec lorem porttitor, mattis mi ac, pretium mauris. Aenean tristique sagittis justo ultrices efficitur. Curabitur rhoncus luctus felis, nec euismod mauris scelerisque vel.
                     </div>
                 </div>
             </div>
