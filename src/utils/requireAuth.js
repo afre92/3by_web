@@ -13,7 +13,8 @@ export default function(ComposedComponent) {
           type: 'error',
           text: 'you need to login to access this page'
         });
-        this.props.history.push('/login')
+        this.props.logout();
+        this.props.history.push('/login');
       }
     }
 
