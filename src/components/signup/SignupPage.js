@@ -6,6 +6,13 @@ import { addFlashMessage } from '../../actions/flashMessages'
 import { connect } from 'react-redux'
 
 class SignupPage extends Component {
+  constructor(props){
+    super(props)
+
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/playlists')
+    }
+  }
   render() {
     const { userSignupRequest, addFlashMessage, userExists } = this.props;
     return (
@@ -33,4 +40,11 @@ SignupForm.propTypes = {
   userExists: PropTypes.func.isRequired
 }
 
-export default connect((state) => { return {} }, {userSignupRequest, addFlashMessage, userExists })(SignupPage);
+
+function mapStateToProps(state) {
+  return {
+      auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps, {userSignupRequest, addFlashMessage, userExists })(SignupPage);

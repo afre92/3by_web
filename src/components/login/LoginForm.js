@@ -20,6 +20,9 @@ class LoginForm extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.onChangeCheckBox = this.onChangeCheckBox.bind(this)
 
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/playlists')
+    }
   }
 
   onChangeCheckBox(e){
@@ -118,7 +121,8 @@ LoginForm.propTypes = {
 
 function mapStateToProps(state) {
   return {
-      messages: state.flashMessages
+      messages: state.flashMessages,
+      auth: state.auth
   }
 }
 
