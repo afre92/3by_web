@@ -21,6 +21,7 @@ export default function TextFieldGroup({ field, value, error, placeholder, type,
             required={required}
             disabled={disabled}
             data={data}
+            autoComplete="off"
           />
           <div className="w-100">
           {error && <span className='help-block'>{error}</span>}
