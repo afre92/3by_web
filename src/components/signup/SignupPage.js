@@ -10,7 +10,7 @@ class SignupPage extends Component {
     super(props)
 
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/playlists')
+      this.props.history.push("/dashboard")
     }
   }
   render() {

@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
       <img src="../assets/img/triunghiuri.png" className="shapes triangle" alt="background-shapes"/>
       <img src="../assets/img/waves.png" className="shapes wave" alt="background-shapes" />
       <img src="../assets/img/cercuri.png" className="shapes circle" alt="background-shapes"/>
-      <div className="dashboard center-horizontally pt-8">
+      <div className="dashboard center-horizontally pt-5">
       
         <div className="dashboard-tiles col-md-9 col-sm-12 " >
         <div className="text-center mt-4">

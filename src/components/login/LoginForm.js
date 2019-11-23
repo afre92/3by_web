@@ -21,7 +21,7 @@ class LoginForm extends Component {
     this.onChangeCheckBox = this.onChangeCheckBox.bind(this)
 
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/playlists')
+      this.props.history.push('/dashboard')
     }
   }
 
@@ -46,7 +46,7 @@ class LoginForm extends Component {
           type: 'success',
           text: 'you logged in successfully. Welcome!'
         });
-        return this.props.history.push('/playlists')
+        return this.props.history.push('/dashboard')
       },
       (err) => this.setState({ errors: err['response']['data'], isLoading: false})
     )

@@ -37,7 +37,7 @@ class NavigationBar extends Component {
           <Link className="nav-link" to="/profile">Profile</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/playlists">Playlists</Link>
+          <Link className="nav-link" to="/dashboard">Dashboard</Link>
         </li>
 
         <li className="nav-item">
