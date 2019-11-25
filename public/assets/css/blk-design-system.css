@@ -20863,7 +20863,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 /*  Playlist  */
 
 .register-content {
-  margin-top: 10%;
+  /* margin-top: 10%; */
   text-align: center;
   margin-bottom: 50px;
 }
@@ -21026,6 +21026,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 }
 
 div.su.register-page {
+  /* overflow-x: hidden; */
   position: relative;
   max-height: 900px;
 }
@@ -21061,4 +21062,8 @@ div.su.register-page {
   justify-content: center;
   align-items: center;
   align-self: center;
+}
+
+.t-100 {
+  top: 100px !important;
 }

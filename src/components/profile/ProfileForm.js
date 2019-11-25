@@ -92,7 +92,7 @@ export default class ProfileForm extends Component {
     return (
       
       <div>
-        <div className="card card-plain">
+        <div className="card card-plain t-100">
           <div className="card-header">
             <h1 className="text-left">User Profile
               <hr className="line-primary"></hr>

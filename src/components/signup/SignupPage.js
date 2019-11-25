@@ -16,10 +16,11 @@ class SignupPage extends Component {
   render() {
     const { userSignupRequest, addFlashMessage, userExists } = this.props;
     return (
+      <div>
       <div className="su register-page">
         <div id="square7" className="square square-7"></div>
         <div id="square8" className="square square-8"></div>
-        <div className="col-md-4 col-md-offset-4 offset-md-1 register-content">
+        <div className="col-md-4 col-md-offset-4 offset-md-1 register-content t-100">
           <SignupForm userSignupRequest={userSignupRequest} history={this.props.history} addFlashMessage={addFlashMessage} userExists={userExists} />
         </div>
         <div className="register-bg"></div>
@@ -29,6 +30,7 @@ class SignupPage extends Component {
         <div id="square4" className="square square-4"></div>
         <div id="square5" className="square square-5"></div>
         <div id="square6" className="square square-6"></div>
+      </div>
       </div>
     )
   }
