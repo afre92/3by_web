@@ -10,11 +10,11 @@ class ProfilePage extends Component {
     const {addFlashMessage, logout, auth } = this.props;
     return (
       <div>
-        <div className="wrapper pb-5 container">
-          <div className="page-header">
+        <div className="wrapper pb-5 container section ">
+          <div className="page-header ">
             <img src="/assets/img/dots.png" className="dots" alt="background-shapes"/>
             <img src="/assets/img/path4.png" className="path" alt="background-shapes" />
-            <div className="pt-100 align-items-center">
+            <div className="align-items-center pt-100">
               <div className="row">
                 <div className="col-md-6">
                   <ProfileForm addFlashMessage={addFlashMessage} logout={logout} user={auth.user}/>
