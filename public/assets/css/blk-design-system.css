@@ -21050,3 +21050,15 @@ div.su.register-page {
   opacity:0.1;
   transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
 }
+
+.App {
+    position: absolute;
+    z-index: 1;
+    width: 100% !important;
+}
+
+.center-vertically {
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}

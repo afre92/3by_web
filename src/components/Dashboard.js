@@ -16,7 +16,7 @@ export default class Dashboard extends Component {
       <img src="../assets/img/cercuri.png" className="shapes circle" alt="background-shapes"/>
       <div className="dashboard center-horizontally pt-5">
       
-        <div className="dashboard-tiles col-md-9 col-sm-12 " >
+        <div className="dashboard-tiles center-vertically col-md-9 col-sm-12 " >
         <div className="text-center mt-4">
           <h1> Hi, I'm your video concierge </h1>
           <h3 > It's {moment().format('dddd')} {moment().format('HH') > 12 ? ( moment().format('HH') > 18 ? 'night' : 'afternoon') : 'morning' }, I've for videos for ...</h3>

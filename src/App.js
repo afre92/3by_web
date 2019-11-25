@@ -9,8 +9,6 @@ function App() {
       <NavigationBar />
       <FlashMessagesList />
     </div>
-
-    
   );
 }
 
