@@ -58,8 +58,8 @@ class Playlist extends Component {
         
         ))
         return (
-            <div className=" playlist col-md-12 section">
-                <div className="">
+            <div className=" playlist col-md-12 section ">
+                <div className="page-header">
             <div className=" center-horizontally pt-5" >
             <div className="col-md-9 col-sm-12 pb-5">
                 <div className="playlist-info row">
