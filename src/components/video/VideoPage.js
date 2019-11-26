@@ -56,11 +56,11 @@ export default class VideoPage extends Component {
     const angryEmojiUrl = disliked ? "/assets/img/angry.png" : "/assets/img/angry-grey.png"
     const inLoveEmojiUrl = liked ? "/assets/img/in-love.png" : "/assets/img/in-love-grey.png"
     return (
-      <div className="col-md-12 pb-100">
+      <div className="col-md-12">
         <div>
           <div className="wrapper section">
             <div>
-              <h3 className="text-center ">{video.title}
+              <h3 className="text-center pt-3">{video.title}
                 <div className="center-horizontally">
                   <hr className="line-primary centered-line mb-0"></hr>
                 </div>
