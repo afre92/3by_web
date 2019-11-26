@@ -4,7 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Greetings from './components/Greetings';
 import Dashboard from './components/Dashboard';
 import SignupPage from './components/signup/SignupPage';
@@ -20,6 +20,7 @@ import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
 import Profile from './components/profile/ProfilePage';
+import NoMatch from './components/NoMatch';
 import GlobalErrorBoundary from './utils/GlobalErrorBoundary'
 
 
@@ -42,14 +43,15 @@ render((
     <Router>
       <GlobalErrorBoundary>
         <div className="index-page" >
-          <Route path="/" component={App} />
-          <Route exact path="/" component={Greetings} />
-          <Route path="/signup" component={SignupPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/profile" component={requireAuth(Profile)} />
-          <Route path="/dashboard" component={requireAuth(Dashboard)} />
-          <Route path="/playlist/:name" component={requireAuth(Playlist)} />
-          <Route path="/video/:id" component={requireAuth(VideoPage)} />
+            <Route path="/" component={App} />
+            <Route exact path="/" component={Greetings} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/profile" component={requireAuth(Profile)} />
+            <Route path="/dashboard" component={requireAuth(Dashboard)} />
+            <Route path="/playlist/:name" component={requireAuth(Playlist)} />
+            <Route path="/video/:id" component={requireAuth(VideoPage)} />
+            <Route component={NoMatch}/>
         </div>
       </GlobalErrorBoundary>
     </Router>
