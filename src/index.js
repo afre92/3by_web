@@ -41,9 +41,11 @@ if (localStorage.jwtToken) {
 render((
   <Provider store={store}>
     <Router>
+      
       <GlobalErrorBoundary>
         <div className="index-page" >
-            <Route path="/" component={App} />
+          <Route path="/" component={App} />
+          <Switch>
             <Route exact path="/" component={Greetings} />
             <Route path="/signup" component={SignupPage} />
             <Route path="/login" component={LoginPage} />
@@ -51,11 +53,11 @@ render((
             <Route path="/dashboard" component={requireAuth(Dashboard)} />
             <Route path="/playlist/:name" component={requireAuth(Playlist)} />
             <Route path="/video/:id" component={requireAuth(VideoPage)} />
-            <Switch>
-              {/* <Route component={NoMatch}/> */}
-            </Switch>
+            <Route path="*" component={NoMatch}/>
+          </Switch>
         </div>
       </GlobalErrorBoundary>
+       
     </Router>
   </Provider>
 ), document.getElementById('root'));
