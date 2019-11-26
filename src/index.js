@@ -20,6 +20,7 @@ import jwt_decode from 'jwt-decode';
 import { setCurrentUser} from './actions/authActions'
 import requireAuth from './utils/requireAuth'
 import Profile from './components/profile/ProfilePage';
+import GlobalErrorBoundary from './utils/GlobalErrorBoundary'
 
 
 const store = createStore(
@@ -39,17 +40,18 @@ if (localStorage.jwtToken) {
 render((
   <Provider store={store}>
     <Router>
-      <div className="index-page" >
-        <Route path="/" component={App} />
-        <Route exact path="/" component={Greetings} />
-        <Route path="/signup" component={SignupPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/profile" component={requireAuth(Profile)} />
-        <Route path="/dashboard" component={requireAuth(Dashboard)} />
-        <Route path="/playlist/:name" component={requireAuth(Playlist)} />
-        <Route path="/video/:id" component={requireAuth(VideoPage)} />
-        
-      </div>
+      <GlobalErrorBoundary>
+        <div className="index-page" >
+          <Route path="/" component={App} />
+          <Route exact path="/" component={Greetings} />
+          <Route path="/signup" component={SignupPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/profile" component={requireAuth(Profile)} />
+          <Route path="/dashboard" component={requireAuth(Dashboard)} />
+          <Route path="/playlist/:name" component={requireAuth(Playlist)} />
+          <Route path="/video/:id" component={requireAuth(VideoPage)} />
+        </div>
+      </GlobalErrorBoundary>
     </Router>
   </Provider>
 ), document.getElementById('root'));
