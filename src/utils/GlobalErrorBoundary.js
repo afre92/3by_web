@@ -18,7 +18,7 @@ class GlobalErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{height: '100vh'}} className="text-center">
+        <div  className="text-center">
         <NavigationBar />
           <div className="pt-5">
             <h1 >3By encountered an error! Oh My!</h1>

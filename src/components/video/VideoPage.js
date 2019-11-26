@@ -118,7 +118,7 @@ export default class VideoPage extends Component {
   render() {
       const { video } = this.state
       return !isEmpty(video) ? this.renderVideo() : (
-        <div style={{height: '100vh'}}></div>
+        false
       )
   }
 }

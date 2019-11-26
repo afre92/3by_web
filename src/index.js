@@ -4,7 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Greetings from './components/Greetings';
 import Dashboard from './components/Dashboard';
 import SignupPage from './components/signup/SignupPage';
@@ -51,7 +51,9 @@ render((
             <Route path="/dashboard" component={requireAuth(Dashboard)} />
             <Route path="/playlist/:name" component={requireAuth(Playlist)} />
             <Route path="/video/:id" component={requireAuth(VideoPage)} />
-            <Route component={NoMatch}/>
+            <Switch>
+              {/* <Route component={NoMatch}/> */}
+            </Switch>
         </div>
       </GlobalErrorBoundary>
     </Router>
