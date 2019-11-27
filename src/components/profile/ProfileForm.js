@@ -148,7 +148,7 @@ export default class ProfileForm extends Component {
                   required={true}
                 />
               </div>
-              <div className="pt-3">
+              <div className="pt-2">
                <button type="submit" className="btn btn-primary btn-round float-left" rel="tooltip" data-placement="right" disabled={this.state.isLoading} >Submit</button>
               </div>
             </form>
