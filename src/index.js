@@ -22,6 +22,8 @@ import requireAuth from './utils/requireAuth'
 import Profile from './components/profile/ProfilePage';
 import NoMatch from './components/NoMatch';
 import GlobalErrorBoundary from './utils/GlobalErrorBoundary'
+import $ from "jquery";
+
 
 
 const store = createStore(
