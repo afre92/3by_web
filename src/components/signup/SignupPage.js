@@ -13,6 +13,7 @@ class SignupPage extends Component {
       this.props.history.push("/dashboard")
     }
   }
+  
   render() {
     const { userSignupRequest, addFlashMessage, userExists } = this.props;
     return (
